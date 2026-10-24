@@ -1,1 +1,1 @@
-# Skj-gold-plan-and-calulater-
+# Skj-gold-plan-and-calulaters-
