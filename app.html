@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>मेरा डेस्क — SKJ (लिस्ट + व्हाइटबोर्ड)</title>
+<meta name="theme-color" content="#0b0907">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("skj_theme")||"gold")}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{--in:#0d0a05;--c1:#1c150a;--c2:#130e06;--bg:#0b0907;--gold:#e8bd52;--gold2:#b8862b;--gold3:#fff0b8;--tx:#f6ecd2;--mut:#b3a27c;--line:#33280f;--ok:#5fd08a;--bad:#ff7a7a;--warn:#f0b44a;--blue:#7fb2ff}
+html[data-theme="maroon"]{--bg:#140608;--c1:#2a1117;--c2:#1a090c;--in:#190a0d;--gold:#f0c46a;--tx:#fbeee0;--mut:#d3b58f;--line:#4a1f26}
+html[data-theme="blue"]{--bg:#070b14;--c1:#121c2e;--c2:#0b1220;--in:#0a1120;--gold:#8dbbff;--gold2:#3d7fe6;--gold3:#d6e6ff;--tx:#e8f0ff;--mut:#9fb3d6;--line:#1f2e4a}
+html[data-theme="green"]{--bg:#07110c;--c1:#112219;--c2:#0a1610;--in:#09150f;--gold:#7be6ab;--gold2:#2bb673;--gold3:#d7ffe9;--tx:#e6fff1;--mut:#9fcfb4;--line:#1c3a2b}
+html[data-theme="light"]{--bg:#faf6ec;--c1:#fff;--c2:#fbf4e2;--in:#fffdf6;--gold:#8f5f00;--gold2:#c99a2e;--gold3:#6b4700;--tx:#2b2208;--mut:#6f5f3a;--line:#e6d9b5}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--tx);font:15px/1.5 Poppins,"Tiro Devanagari Hindi",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+h1,h2,h3{font-family:"Tiro Devanagari Hindi",Poppins,serif;color:var(--gold);margin:0 0 8px}
+.hide{display:none!important}
+input,select,textarea{width:100%;background:var(--in);color:var(--tx);border:1px solid var(--gold2);border-radius:12px;padding:10px 12px;font:inherit;font-size:16px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,189,82,.18)}
+textarea{min-height:70px;resize:vertical}label{display:block;font-size:12px;color:var(--mut);margin:10px 0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:30px;padding:10px 16px;font:600 14px Poppins,sans-serif;cursor:pointer;background:linear-gradient(135deg,#f3cf6a,var(--gold2));color:#1a1204;text-decoration:none}
+.btn.o{background:transparent;color:var(--gold);border:1px solid var(--gold2)}.btn.sm{padding:6px 12px;font-size:13px}.btn.d{background:#3a1414;color:#ffb4b4;border:1px solid #7a2a2a}
+.btn:active{transform:scale(.97)}
+.card{background:linear-gradient(180deg,var(--c1),var(--c2));border:1px solid var(--line);border-radius:18px;padding:16px}
+.note{font-size:12px;color:var(--mut)}
+/* auth */
+#auth{min-height:100%;display:flex;align-items:center;justify-content:center;padding:20px}
+#auth .card{width:min(420px,100%)}
+.tabs{display:flex;background:var(--in);border:1px solid var(--gold2);border-radius:30px;padding:4px;gap:4px;margin:10px 0}
+.tabs button{flex:1;background:none;border:0;color:var(--gold);font:600 13px Poppins;padding:8px 6px;border-radius:24px;cursor:pointer}
+.tabs button.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204}
+.err{color:var(--bad);font-size:13px;min-height:18px;margin-top:6px}.okm{color:var(--ok)}
+/* shell */
+#app{height:100%;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:10px;padding:8px 12px;padding-top:calc(8px + env(safe-area-inset-top,0px));border-bottom:1px solid var(--line);background:var(--c2)}
+.top img{height:34px}.top b{color:var(--gold);font-size:15px}.top .sp{flex:1}.top .who{font-size:12px;color:var(--mut);text-align:right;max-width:40vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--c2)}
+.nav button{flex:1;background:var(--in);border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:9px 6px;font:600 14px Poppins;cursor:pointer}
+.nav button.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204;border-color:transparent}
+main{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}
+.wrap{max-width:1000px;margin:0 auto;padding:12px 12px 90px}
+/* leads */
+.stats{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.stats button{flex:0 0 auto;background:var(--in);border:1px solid var(--line);border-radius:14px;padding:8px 12px;color:var(--tx);font:inherit;font-size:13px;cursor:pointer;text-align:left}
+.stats button b{display:block;font-size:20px;color:var(--gold)}.stats button.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(232,189,82,.25)}
+.bar{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}.bar>*{flex:1 1 160px}
+.lead{background:linear-gradient(180deg,var(--c1),var(--c2));border:1px solid var(--line);border-radius:16px;padding:12px;margin:8px 0;display:flex;gap:10px;align-items:center}
+.lead .av{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#1a1204;background:linear-gradient(135deg,var(--gold),var(--gold2))}
+.lead .m{flex:1;min-width:0;cursor:pointer}.lead .m b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead .m .note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead .ac{display:flex;gap:6px}.lead .ac a,.lead .ac button{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-size:18px;border:1px solid var(--line);background:var(--in);cursor:pointer;color:var(--tx)}
+.lead .ac .wa{background:#1c3b26;border-color:#25d366}
+.bdg{display:inline-block;font-size:11px;border-radius:10px;padding:1px 8px;border:1px solid;margin-right:6px}
+.due{color:var(--bad);font-weight:600}.today{color:var(--warn);font-weight:600}
+.fab{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:0;font-size:28px;background:linear-gradient(135deg,#f3cf6a,var(--gold2));color:#1a1204;box-shadow:0 10px 30px rgba(0,0,0,.5);cursor:pointer;z-index:30}
+/* modal */
+#md{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.7);display:none;align-items:flex-end;justify-content:center}
+#md.on{display:flex}#md .sheet{background:var(--c1);border:1px solid var(--gold2);border-radius:22px 22px 0 0;width:min(640px,100%);max-height:92vh;overflow:auto;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+@media(min-width:700px){#md{align-items:center}#md .sheet{border-radius:22px}}
+.mh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}.mh h3{margin:0}
+.x{background:none;border:0;color:var(--mut);font-size:22px;cursor:pointer}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}@media(max-width:480px){.g2{grid-template-columns:1fr}}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.chips button{background:var(--in);border:1px solid var(--gold2);color:var(--gold);border-radius:16px;padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}
+.chips button.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204}
+.log{border-left:2px solid var(--gold2);padding:4px 0 4px 12px;margin:8px 0}.log div{font-size:14px;white-space:pre-wrap}
+.imp{max-height:45vh;overflow:auto;border:1px solid var(--line);border-radius:12px;margin:8px 0}
+.imp label{display:flex;gap:10px;align-items:center;margin:0;padding:8px 10px;border-bottom:1px solid var(--line);color:var(--tx);font-size:14px}.imp input{width:auto}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--gold);color:#1a1204;padding:9px 16px;border-radius:22px;font-weight:600;z-index:99;max-width:90vw;text-align:center}
+/* whiteboard */
+.bl{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+.bl .bi{border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;background:var(--in)}
+.bl .bi img,.bl .bi .ph{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;display:block;background:#fff}
+.bl .bi div{padding:6px 10px;font-size:13px;display:flex;justify-content:space-between;gap:6px}
+#wb{position:fixed;inset:0;z-index:50;background:#2a2a2a;display:none;flex-direction:column}
+#wb.on{display:flex}
+.wt{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 8px;padding-top:calc(6px + env(safe-area-inset-top,0px));background:#151515;flex:none}
+@media(max-width:700px){.wt .sep{display:none}.wt button{min-width:36px;height:36px;font-size:16px}.wtitle{width:120px;height:36px}}
+.wt button{flex:none;min-width:40px;height:40px;border-radius:10px;border:1px solid #444;background:#222;color:#eee;font-size:18px;cursor:pointer;padding:0 8px}
+.wt button.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(232,189,82,.4);background:#3a3020}
+.wt .sw{width:30px;min-width:30px;height:30px;border-radius:50%;padding:0;border:2px solid #555}
+.wt .sw.on{border-color:#fff;box-shadow:0 0 0 2px var(--gold)}
+.wt .sep{width:1px;height:28px;background:#444;flex:none}
+.wt input[type=color]{width:34px;height:34px;padding:0;border:0;border-radius:50%;background:none;flex:none}
+.wt input[type=range]{width:90px;flex:none;padding:0;border:0;accent-color:var(--gold)}
+#wbst{color:#aaa;font-size:12px;flex:none;padding:0 6px;white-space:nowrap}
+#wbbox{flex:1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#wbst2{position:relative}
+#cbg,#cink{position:absolute;left:0;top:0;width:100%;height:100%;touch-action:none}
+#cink{cursor:crosshair}
+.wtitle{background:#222;border:1px solid #444;color:#eee;border-radius:10px;height:40px;width:150px;flex:none;font-size:14px;padding:0 10px}
+</style></head><body>
+
+<div id="auth" class="hide"><div class="card">
+<div style="text-align:center"><img src="logo.png" alt="SKJ" style="height:70px"><h2 style="margin-top:6px">मेरा डेस्क</h2><p class="note">लीड / to-do लिस्ट और व्हाइटबोर्ड — आपका डेटा सिर्फ़ आपको दिखेगा।</p></div>
+<div class="tabs" id="atabs"><button class="on" data-t="in" type="button">लॉगिन</button><button data-t="up" type="button">नई ID बनाएँ</button><button data-t="fg" type="button">पासवर्ड भूले?</button></div>
+<div id="f_in"><label>ईमेल (यही आपकी ID है)</label><input id="li_e" type="email" autocomplete="username" inputmode="email"><label>पासवर्ड</label><input id="li_p" type="password" autocomplete="current-password"><button class="btn" id="li_go" type="button" style="width:100%;margin-top:14px">लॉगिन</button></div>
+<div id="f_up" class="hide"><label>आपका नाम *</label><input id="su_n" autocomplete="name"><label>मोबाइल</label><input id="su_m" type="tel" inputmode="tel"><label>ईमेल * (पासवर्ड भूलने पर इसी पर लिंक आएगा)</label><input id="su_e" type="email" autocomplete="email" inputmode="email"><label>पासवर्ड * (कम से कम 6 अक्षर)</label><input id="su_p" type="password" autocomplete="new-password"><label>SKJ ID / स्पॉन्सर (वैकल्पिक)</label><input id="su_s"><button class="btn" id="su_go" type="button" style="width:100%;margin-top:14px">✅ ID बनाएँ</button></div>
+<div id="f_fg" class="hide"><p class="note">अपना ईमेल डालें — पासवर्ड बदलने का लिंक उसी ईमेल पर आएगा (Spam फ़ोल्डर भी देखें)। आपका पूरा डेटा सुरक्षित रहेगा।</p><label>ईमेल</label><input id="fg_e" type="email" inputmode="email"><button class="btn" id="fg_go" type="button" style="width:100%;margin-top:14px">📧 रीसेट लिंक भेजें</button></div>
+<div class="err" id="aerr"></div>
+<p class="note" style="text-align:center;margin-top:12px"><a href="./" style="color:var(--gold)">← वेबसाइट पर वापस</a></p>
+</div></div>
+
+<div id="app" class="hide">
+<div class="top"><a href="./"><img src="logo.png" alt="SKJ"></a><b>मेरा डेस्क</b><span class="sp"></span><span class="who" id="who"></span><button class="btn o sm" id="lo" type="button">🚪</button></div>
+<div class="nav" id="nav"><button class="on" data-v="list" type="button">📋 लिस्ट</button><button data-v="wb" type="button">✏️ व्हाइटबोर्ड</button><button data-v="me" type="button">👤 मैं</button></div>
+<main><div class="wrap" id="view"></div></main>
+<button class="fab" id="fab" type="button" aria-label="नया">＋</button>
+</div>
+
+<div id="md"><div class="sheet" id="sheet"></div></div>
+
+<div id="wb">
+<div class="wt" id="wt">
+<button id="wbBack" type="button" title="वापस">←</button>
+<input class="wtitle" id="wbTitle" maxlength="40">
+<span class="sep"></span>
+<button data-tool="pen" class="on" type="button" title="पेन">✒️</button><button data-tool="hl" type="button" title="हाइलाइटर">🖍️</button><button data-tool="er" type="button" title="रबर">🧽</button>
+<span class="sep"></span>
+<span id="sws"></span><input type="color" id="wbCol" value="#1b2a7a" title="और रंग">
+<input type="range" id="wbSize" min="1" max="40" value="6" title="मोटाई">
+<span class="sep"></span>
+<button id="wbUndo" type="button" title="वापस लें">↶</button><button id="wbRedo" type="button" title="फिर करें">↷</button>
+<button id="wbPen" type="button" title="सिर्फ़ स्टाइलस (हथेली से न लिखे)">🖊️ऑफ़</button>
+<button id="wbBg" type="button" title="पेज का डिज़ाइन">▦</button>
+<button id="wbClr" type="button" title="सब साफ़">🗑️</button>
+<button id="wbDl" type="button" title="फोटो डाउनलोड">⬇</button>
+<button id="wbFs" type="button" title="पूरी स्क्रीन">⛶</button>
+<span id="wbst"></span>
+</div>
+<div id="wbbox"><div id="wbst2"><canvas id="cbg"></canvas><canvas id="cink"></canvas></div></div>
+</div>
+
+<script src="desk-config.js"></script>
+<script>
+(function(){"use strict";
+var $=function(i){return document.getElementById(i)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function toast(m){var t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},2600)}
+function rid(){var a=new Uint8Array(10);crypto.getRandomValues(a);return Array.prototype.map.call(a,function(x){return(x%36).toString(36)}).join("")}
+function today(o){var d=new Date();d.setDate(d.getDate()+(o||0));return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+function fd(s){return s?String(s).split("-").reverse().join("-"):""}
+function p10(p){var d=String(p||"").replace(/\D/g,"");return d.slice(-10)}
+function mapErr(e){var c=String((e&&e.code)||(e&&e.message)||e||"");
+if(/invalid-credential|wrong-password|user-not-found|invalid-login/.test(c))return"ईमेल या पासवर्ड गलत है।";if(/invalid-email/.test(c))return"ईमेल सही नहीं है।";if(/email-already/.test(c))return"इस ईमेल से ID पहले से बनी है — लॉगिन करें या पासवर्ड रीसेट करें।";
+if(/weak-password/.test(c))return"पासवर्ड कम से कम 6 अक्षर का रखें।";if(/too-many/.test(c))return"बहुत कोशिशें हुईं — थोड़ी देर बाद करें।";if(/network/.test(c))return"इंटरनेट जाँचें।";
+if(/permission-denied|insufficient/.test(c))return"अनुमति नहीं — Admin से Firestore Rules में members वाला नियम जुड़वाएँ।";if(/operation-not-allowed/.test(c))return"Firebase में Email/Password साइन-अप बंद है — Admin चालू करें।";return"त्रुटि: "+c}
+
+/* ---------- firebase (अलग app नाम — ERP लॉगिन पर असर नहीं) ---------- */
+var CF=window.SKJ_DESK||{},CLOUD=!!(CF.apiKey&&CF.projectId),C=null,U=null,ME={},LEADS=[],BOARDS=[],UNS=[];
+/* ---------- फ़ोन मोड: डेटा सिर्फ़ इसी फ़ोन/कंप्यूटर में (कोई सर्वर नहीं) ---------- */
+function localDB(){var MEM={},LIS=[],idb=null;
+function fire(){LIS.forEach(function(l){try{l()}catch(e){}})}var ft=0;function fireSoon(){clearTimeout(ft);ft=setTimeout(fire,0)}
+function put(k){if(!idb)return;try{var tx=idb.transaction("d","readwrite");if(MEM[k]===undefined)tx.objectStore("d").delete(k);else tx.objectStore("d").put(MEM[k],k)}catch(e){}}
+var Fs={doc:function(){var a=[].slice.call(arguments,1);return{path:a.join("/"),id:a[a.length-1]}},collection:function(){var a=[].slice.call(arguments,1);return{col:a.join("/")}},
+setDoc:function(r,d,o){MEM[r.path]=Object.assign(o&&o.merge?(MEM[r.path]||{}):{},JSON.parse(JSON.stringify(d)));put(r.path);fireSoon();return Promise.resolve()},
+updateDoc:function(r,d){MEM[r.path]=Object.assign(MEM[r.path]||{},JSON.parse(JSON.stringify(d)));put(r.path);fireSoon();return Promise.resolve()},
+deleteDoc:function(r){delete MEM[r.path];put(r.path);fireSoon();return Promise.resolve()},
+getDoc:function(r){var d=MEM[r.path];return Promise.resolve({exists:function(){return!!d},data:function(){return d}})},
+writeBatch:function(){var ops=[];return{set:function(r,d,o){ops.push(function(){Fs.setDoc(r,d,o)})},delete:function(r){ops.push(function(){Fs.deleteDoc(r)})},commit:function(){ops.forEach(function(f){f()});return Promise.resolve()}}},
+onSnapshot:function(r,cb){var f=function(){if(r.col){var pre=r.col+"/";cb({docs:Object.keys(MEM).filter(function(k){return k.indexOf(pre)==0&&k.slice(pre.length).indexOf("/")<0}).map(function(k){return{id:k.slice(pre.length),data:function(){return MEM[k]}}})})}else{var d=MEM[r.path];cb({exists:function(){return!!d},data:function(){return d}})}};LIS.push(f);f();return function(){LIS=LIS.filter(function(x){return x!==f})}}};
+var USER={uid:"local",email:"",displayName:"",emailVerified:true,local:true};
+var Au={onAuthStateChanged:function(a,cb){cb(USER)},signOut:function(){return Promise.resolve()},sendPasswordResetEmail:function(){return Promise.reject("फ़ोन मोड में ईमेल नहीं")}};
+function exportAll(){return JSON.stringify({v:1,app:"skj-desk",at:new Date().toISOString(),docs:MEM})}
+function importAll(o){Object.keys(o.docs||{}).forEach(function(k){MEM[k]=o.docs[k];put(k)});fire()}
+return new Promise(function(res){var done=function(){res({Au:Au,Fs:Fs,auth:{},db:{},local:true,exportAll:exportAll,importAll:importAll})};
+try{var rq=indexedDB.open("skj_desk",1);rq.onupgradeneeded=function(){rq.result.createObjectStore("d")};rq.onerror=done;
+rq.onsuccess=function(){idb=rq.result;var cur=idb.transaction("d").objectStore("d").openCursor();cur.onsuccess=function(){var c=cur.result;if(c){MEM[c.key]=c.value;c.continue()}else done()};cur.onerror=done}}catch(e){done()}})}
+function fb(){if(C)return Promise.resolve(C);if(!CLOUD)return localDB().then(function(c){C=c;return C});var B="https://www.gstatic.com/firebasejs/10.12.2/";
+return Promise.all([import(B+"firebase-app.js"),import(B+"firebase-auth.js"),import(B+"firebase-firestore.js")]).then(function(m){var A=m[0],Au=m[1],Fs=m[2],app=A.initializeApp(CF,"skjm"),db;
+try{db=Fs.initializeFirestore(app,{localCache:Fs.persistentLocalCache({tabManager:Fs.persistentMultipleTabManager()})})}catch(e){db=Fs.getFirestore(app)}
+C={Au:Au,Fs:Fs,auth:Au.getAuth(app),db:db};return C})}
+function D(){var a=[C.db,"members",U.uid].concat([].slice.call(arguments));return C.Fs.doc.apply(null,a)}
+function COL(n){return C.Fs.collection(C.db,"members",U.uid,n)}
+
+/* ---------- auth UI ---------- */
+var AT="in";
+$("atabs").onclick=function(e){var b=e.target.closest("button");if(!b)return;AT=b.getAttribute("data-t");$$("#atabs button").forEach(function(x){x.classList.toggle("on",x===b)});["in","up","fg"].forEach(function(t){$("f_"+t).classList.toggle("hide",t!=AT)});$("aerr").textContent=""};
+function aerr(m,ok){$("aerr").innerHTML=ok?'<span class="okm">'+esc(m)+'</span>':esc(m)}
+$("li_go").onclick=function(){var e=$("li_e").value.trim(),p=$("li_p").value;if(!e||!p)return aerr("ईमेल और पासवर्ड भरें।");aerr("⏳ …",1);fb().then(function(){return C.Au.signInWithEmailAndPassword(C.auth,e,p)}).catch(function(x){aerr(mapErr(x))})};
+$("li_p").onkeydown=function(e){if(e.key=="Enter")$("li_go").click()};
+$("su_go").onclick=function(){var n=$("su_n").value.trim(),m=$("su_m").value.trim(),e=$("su_e").value.trim(),p=$("su_p").value,s=$("su_s").value.trim();
+if(!n)return aerr("नाम भरें।");if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e))return aerr("सही ईमेल डालें — पासवर्ड भूलने पर इसी पर लिंक आएगा।");if(p.length<6)return aerr("पासवर्ड कम से कम 6 अक्षर का रखें।");aerr("⏳ ID बन रही है…",1);
+fb().then(function(){return C.Au.createUserWithEmailAndPassword(C.auth,e,p)}).then(function(cr){U=cr.user;C.Au.updateProfile(cr.user,{displayName:n}).catch(function(){});C.Au.sendEmailVerification(cr.user).catch(function(){});
+return C.Fs.setDoc(D(),{name:n,mobile:m,email:e,sponsor:s,fields:["पैकेज","शहर"],created:Date.now()},{merge:true})}).catch(function(x){aerr(mapErr(x))})};
+$("fg_go").onclick=function(){var e=$("fg_e").value.trim();if(!e)return aerr("ईमेल डालें।");aerr("⏳ …",1);
+fb().then(function(){return C.Au.sendPasswordResetEmail(C.auth,e)}).then(function(){aerr("✅ अगर यह ईमेल रजिस्टर है तो रीसेट लिंक भेज दिया गया है। ईमेल (और Spam) देखें, लिंक से नया पासवर्ड बनाएँ।",1)}).catch(function(x){aerr(mapErr(x))})};
+$("lo").onclick=function(){if(!confirm("लॉगआउट करें?"))return;UNS.forEach(function(f){try{f()}catch(e){}});UNS=[];C.Au.signOut(C.auth)};
+
+fb().then(function(){C.Au.onAuthStateChanged(C.auth,function(u){U=u;if(!u){$("app").classList.add("hide");$("auth").classList.remove("hide");return}start()})}).catch(function(){$("auth").classList.remove("hide");aerr("इंटरनेट जाँचें — Firebase लोड नहीं हुआ।")});
+
+/* ---------- start / data ---------- */
+var VIEW="list",F={st:"",q:"",when:""};
+function start(){$("auth").classList.add("hide");$("app").classList.remove("hide");$("who").textContent=U.local?"📱 फ़ोन मोड":(U.displayName||U.email);$("lo").classList.toggle("hide",!!U.local);
+UNS.forEach(function(f){try{f()}catch(e){}});UNS=[];
+UNS.push(C.Fs.onSnapshot(D(),function(s){ME=s.exists()?s.data():{};if(!ME.fields)ME.fields=["पैकेज","शहर"];if(U.local&&!ME.name&&!start.asked){start.asked=1;setTimeout(function(){VIEW="me";$$("#nav button").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-v")=="me")});render();toast("पहले अपना नाम भर दें 🙂")},300)}if(ME.name)$("who").textContent=(U.local?"📱 ":"")+ME.name;if(VIEW=="me")render()},function(){}));
+UNS.push(C.Fs.onSnapshot(COL("leads"),function(sn){LEADS=sn.docs.map(function(d){return Object.assign({id:d.id},d.data())});if(!$("md").classList.contains("on")||VIEW!="list")render();else PEND=1},function(e){$("view").innerHTML='<div class="card err">'+esc(mapErr(e))+'</div>'}));
+UNS.push(C.Fs.onSnapshot(COL("boards"),function(sn){BOARDS=sn.docs.map(function(d){return Object.assign({id:d.id},d.data())});if(VIEW=="wb")render()},function(){}));
+render()}
+var PEND=0;
+$("nav").onclick=function(e){var b=e.target.closest("button");if(!b)return;VIEW=b.getAttribute("data-v");$$("#nav button").forEach(function(x){x.classList.toggle("on",x===b)});$("fab").classList.toggle("hide",VIEW=="me");render();document.querySelector("main").scrollTop=0};
+function render(){var v=$("view");if(VIEW=="list")v.innerHTML=listHTML();else if(VIEW=="wb")v.innerHTML=boardsHTML();else v.innerHTML=meHTML();if(VIEW=="list")bindList()}
+$("fab").onclick=function(){if(VIEW=="wb")newBoard();else addMenu()};
+
+/* ---------- leads / to-do ---------- */
+var ST=[["new","नया","#7fb2ff"],["called","कॉल किया","#c9a6ff"],["int","इंटरेस्टेड","#f0b44a"],["plan","प्लान दिखाया","#e8bd52"],["fu","फॉलो-अप","#ff9f6b"],["join","जॉइन ✓","#5fd08a"],["no","मना / बाद में","#ff7a7a"]];
+function stOf(k){return ST.find(function(s){return s[0]==k})||ST[0]}
+function bdg(k){var s=stOf(k);return'<span class="bdg" style="color:'+s[2]+';border-color:'+s[2]+'">'+s[1]+'</span>'}
+function whenTag(l){if(!l.next||l.status=="join"||l.status=="no")return"";var t=today();if(l.next<t)return'<span class="due">⏰ '+fd(l.next)+' (बाकी)</span>';if(l.next==t)return'<span class="today">📅 आज</span>';return'<span class="note">📅 '+fd(l.next)+'</span>'}
+function filtered(){var q=F.q.toLowerCase(),t=today();return LEADS.filter(function(l){if(F.st&&l.status!=F.st)return false;
+if(F.when=="today"&&!(l.next&&l.next<=t&&l.status!="join"&&l.status!="no"))return false;
+if(q&&(String(l.name||"")+" "+(l.phone||"")+" "+(l.city||"")+" "+JSON.stringify(l.custom||{})).toLowerCase().indexOf(q)<0)return false;return true}).sort(function(a,b){
+var an=a.next&&a.status!="join"&&a.status!="no"?a.next:"9999",bn=b.next&&b.status!="join"&&b.status!="no"?b.next:"9999";return an<bn?-1:an>bn?1:(b.up||0)-(a.up||0)})}
+function listHTML(){var t=today(),cnt={},due=0;ST.forEach(function(s){cnt[s[0]]=0});LEADS.forEach(function(l){cnt[l.status||"new"]=(cnt[l.status||"new"]||0)+1;if(l.next&&l.next<=t&&l.status!="join"&&l.status!="no")due++});
+var L=filtered();
+return'<div class="stats"><button data-w="today" class="'+(F.when=="today"?"on":"")+'"><b style="color:var(--warn)">'+due+'</b>आज के काम</button><button data-s="" class="'+(!F.st&&!F.when?"on":"")+'"><b>'+LEADS.length+'</b>सभी</button>'+ST.map(function(s){return'<button data-s="'+s[0]+'" class="'+(F.st==s[0]?"on":"")+'"><b style="color:'+s[2]+'">'+cnt[s[0]]+'</b>'+s[1]+'</button>'}).join("")+'</div>'+
+'<div class="bar"><input id="q" placeholder="🔍 नाम / नंबर / शहर खोजें" value="'+esc(F.q)+'"><div style="flex:0 0 auto;display:flex;gap:6px"><button class="btn o sm" data-a="imp" type="button">📥 कॉन्टैक्ट इंपोर्ट</button><button class="btn o sm" data-a="exp" type="button">📤 Excel</button></div></div>'+
+(L.length?L.map(function(l){var last=(l.log||[])[0];return'<div class="lead"><div class="av">'+esc((l.name||"?").trim().charAt(0).toUpperCase())+'</div><div class="m" data-open="'+l.id+'"><b>'+esc(l.name||"—")+'</b><div class="note">'+bdg(l.status||"new")+whenTag(l)+'</div>'+(last?'<div class="note">💬 '+esc(last.t)+'</div>':(l.phone?'<div class="note">'+esc(l.phone)+'</div>':""))+'</div><div class="ac">'+(l.phone?'<a href="tel:'+esc(l.phone.replace(/[^\d+]/g,""))+'" data-call="'+l.id+'" title="कॉल">📞</a><a class="wa" href="https://wa.me/'+(p10(l.phone).length==10?"91"+p10(l.phone):l.phone.replace(/\D/g,""))+'?text='+encodeURIComponent("नमस्ते "+(l.name||"")+" जी, "+(ME.name||"")+" — SKJ Jewellers की ओर से। "+location.origin+location.pathname.replace(/[^\/]*$/,""))+'" target="_blank" rel="noopener" title="WhatsApp">💬</a>':"")+'</div></div>'}).join(""):
+'<div class="card" style="text-align:center;margin-top:16px"><div style="font-size:40px">📋</div><b>'+(LEADS.length?"इस फ़िल्टर में कोई नहीं":"अभी लिस्ट खाली है")+'</b><p class="note">नीचे ＋ से नाम जोड़ें या फ़ोन के कॉन्टैक्ट इंपोर्ट करें।</p><button class="btn" data-a="imp" type="button">📥 कॉन्टैक्ट इंपोर्ट</button></div>')}
+function bindList(){var q=$("q");if(q)q.oninput=function(){F.q=q.value;var p=q.selectionStart;render();var n=$("q");n.focus();try{n.setSelectionRange(p,p)}catch(e){}}}
+$("view").addEventListener("click",function(e){var t=e.target;
+var w=t.closest("[data-w]");if(w){F.when=F.when=="today"?"":"today";F.st="";render();return}
+var s=t.closest("[data-s]");if(s){F.st=s.getAttribute("data-s");F.when="";render();return}
+var o=t.closest("[data-open]");if(o){openLead(o.getAttribute("data-open"));return}
+var c=t.closest("[data-call]");if(c){CALLED={id:c.getAttribute("data-call"),ts:Date.now()};return}
+var a=t.closest("[data-a]");if(a){var k=a.getAttribute("data-a");if(k=="imp")importMenu();if(k=="exp")exportX();if(k=="ob")openBoard(a.getAttribute("data-id"));if(k=="nb")newBoard();if(k=="db")delBoard(a.getAttribute("data-id"));if(k=="saveMe")saveMe()}});
+/* कॉल से लौटने पर "उसने क्या कहा" पूछें */
+var CALLED=null;
+document.addEventListener("visibilitychange",function(){if(!document.hidden&&CALLED&&Date.now()-CALLED.ts>4000){var id=CALLED.id;CALLED=null;openLead(id,true)}});
+
+function modal(h){$("sheet").innerHTML=h;$("md").classList.add("on")}
+function closeMd(){$("md").classList.remove("on");$("sheet").innerHTML="";if(PEND){PEND=0;render()}}
+$("md").addEventListener("click",function(e){if(e.target.id=="md"||e.target.closest("[data-close]"))closeMd()});
+
+function addMenu(){modal('<div class="mh"><h3>➕ नया नाम जोड़ें</h3><button class="x" data-close type="button">✕</button></div>'+
+'<label>नाम *</label><input id="n_n"><label>मोबाइल</label><input id="n_p" type="tel" inputmode="tel"><label>पहली बात / नोट</label><input id="n_t" placeholder="जैसे — रिश्तेदार, गोल्ड में रुचि">'+
+'<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn" id="n_go" type="button">💾 जोड़ें</button><button class="btn o" id="n_imp" type="button">📥 कॉन्टैक्ट से चुनें</button></div><div class="err" id="n_e"></div>');
+$("n_n").focus();$("n_imp").onclick=importMenu;
+$("n_go").onclick=function(){var n=$("n_n").value.trim(),p=$("n_p").value.trim(),t=$("n_t").value.trim();if(!n)return $("n_e").textContent="नाम भरें।";
+if(p&&LEADS.some(function(l){return p10(l.phone)&&p10(l.phone)==p10(p)}))if(!confirm("यह नंबर पहले से लिस्ट में है। फिर भी जोड़ें?"))return;
+var id=rid(),d={name:n,phone:p,status:"new",next:today(1),log:t?[{t:t,ts:Date.now(),s:"new"}]:[],custom:{},created:Date.now(),up:Date.now()};
+C.Fs.setDoc(D("leads",id),d).catch(function(x){toast(mapErr(x))});closeMd();toast("जुड़ गया ✅ — कल का फॉलो-अप लग गया")}}
+
+function openLead(id,afterCall){var l=LEADS.find(function(x){return x.id==id});if(!l)return;var cu=l.custom||{},flds=(ME.fields||[]).slice();Object.keys(cu).forEach(function(k){if(flds.indexOf(k)<0)flds.push(k)});
+modal('<div class="mh"><h3>'+esc(l.name||"—")+'</h3><button class="x" data-close type="button">✕</button></div>'+
+(afterCall?'<div class="card" style="border-color:var(--gold);margin-bottom:8px"><b style="color:var(--gold)">📞 कॉल कैसी रही? नीचे लिखें — उसने क्या कहा।</b></div>':"")+
+'<label>उसने क्या कहा / नोट</label><textarea id="l_t" placeholder="जैसे — रविवार को मिलेंगे, 3g पैकेज में रुचि"></textarea>'+
+'<label>स्थिति</label><div class="chips" id="l_st">'+ST.map(function(s){return'<button type="button" data-k="'+s[0]+'" class="'+((l.status||"new")==s[0]?"on":"")+'">'+s[1]+'</button>'}).join("")+'</div>'+
+'<label>अगली बात / फॉलो-अप की तारीख</label><div style="display:flex;gap:8px;align-items:center"><input id="l_nx" type="date" value="'+esc(l.next||"")+'" style="flex:1"><button class="btn o sm" type="button" data-d="">✕</button></div><div class="chips" id="l_q"><button type="button" data-d="0">आज</button><button type="button" data-d="1">कल</button><button type="button" data-d="3">3 दिन</button><button type="button" data-d="7">1 हफ़्ता</button><button type="button" data-d="30">1 महीना</button></div>'+
+'<div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="l_save" type="button">💾 सेव करें</button>'+(l.phone?'<a class="btn o" href="tel:'+esc(l.phone.replace(/[^\d+]/g,""))+'" data-call2="1">📞 कॉल</a>':"")+'</div>'+
+'<details style="margin-top:14px"><summary style="cursor:pointer;color:var(--gold)">📝 पूरी जानकारी ('+flds.length+' खाने)</summary><div class="g2"><div><label>नाम</label><input id="l_n" value="'+esc(l.name||"")+'"></div><div><label>मोबाइल</label><input id="l_p" type="tel" value="'+esc(l.phone||"")+'"></div>'+
+flds.map(function(f,i){return'<div><label>'+esc(f)+'</label><input data-cf="'+esc(f)+'" value="'+esc(cu[f]||"")+'"></div>'}).join("")+'</div>'+
+'<div style="display:flex;gap:8px;margin-top:8px"><input id="l_nf" placeholder="नया खाना — जैसे जन्मदिन, पता, रेफ़रल" style="flex:1"><button class="btn o sm" id="l_af" type="button">➕</button></div><p class="note">यहाँ जोड़ा खाना आपके सभी नामों में दिखेगा (प्रोफाइल में बदल सकते हैं)।</p></details>'+
+'<h3 style="margin-top:16px;font-size:16px">🕘 बातचीत का इतिहास</h3>'+((l.log||[]).length?(l.log||[]).map(function(g){return'<div class="log"><span class="note">'+new Date(g.ts).toLocaleString("hi-IN",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"})+' · '+stOf(g.s)[1]+(g.nx?' · अगली: '+fd(g.nx):"")+'</span><div>'+esc(g.t)+'</div></div>'}).join(""):'<p class="note">अभी कोई नोट नहीं।</p>')+
+'<div style="margin-top:16px;text-align:right"><button class="btn d sm" id="l_del" type="button">🗑 हटाएँ</button></div>');
+var st=l.status||"new";
+$("l_st").onclick=function(e){var b=e.target.closest("button");if(!b)return;st=b.getAttribute("data-k");$$("#l_st button").forEach(function(x){x.classList.toggle("on",x===b)});if(st=="join"||st=="no")$("l_nx").value=""};
+$("sheet").querySelectorAll("[data-d]").forEach(function(b){b.onclick=function(){var d=b.getAttribute("data-d");$("l_nx").value=d===""?"":today(+d)}});
+var c2=$("sheet").querySelector("[data-call2]");if(c2)c2.onclick=function(){CALLED={id:id,ts:Date.now()};closeMd()};
+$("l_af").onclick=function(){var f=$("l_nf").value.trim();if(!f)return;var fl=(ME.fields||[]).slice();if(fl.indexOf(f)<0)fl.push(f);ME.fields=fl;C.Fs.setDoc(D(),{fields:fl},{merge:true}).catch(function(){});saveLead(true);setTimeout(function(){openLead(id)},150)};
+function saveLead(silent){var t=$("l_t").value.trim(),nx=$("l_nx").value,cust={};$$("[data-cf]",$("sheet")).forEach(function(i){if(i.value.trim())cust[i.getAttribute("data-cf")]=i.value.trim()});
+var u={name:$("l_n").value.trim()||l.name,phone:$("l_p").value.trim(),status:st,next:nx,custom:cust,up:Date.now()};
+if(t||st!=(l.status||"new"))u.log=[{t:t||("स्थिति: "+stOf(st)[1]),ts:Date.now(),s:st,nx:nx}].concat(l.log||[]).slice(0,100);
+C.Fs.updateDoc(D("leads",id),u).catch(function(x){toast(mapErr(x))});if(!silent){closeMd();toast(st=="join"?"🎉 बधाई — जॉइनिंग दर्ज!":"सेव हो गया ✅")}}
+$("l_save").onclick=function(){saveLead(false)};
+$("l_del").onclick=function(){if(!confirm("'"+(l.name||"")+"' को लिस्ट से हटाएँ?"))return;C.Fs.deleteDoc(D("leads",id)).catch(function(x){toast(mapErr(x))});closeMd()};
+if(afterCall)setTimeout(function(){$("l_t").focus()},200)}
+
+/* कॉन्टैक्ट इंपोर्ट */
+function importMenu(){var api=("contacts" in navigator)&&("select" in navigator.contacts);
+modal('<div class="mh"><h3>📥 कॉन्टैक्ट इंपोर्ट</h3><button class="x" data-close type="button">✕</button></div>'+
+(api?'<button class="btn" id="ic_api" type="button" style="width:100%">📱 फ़ोन के कॉन्टैक्ट से चुनें</button><p class="note" style="text-align:center">या</p>':'<p class="note">आपके फ़ोन/ब्राउज़र में सीधे कॉन्टैक्ट चुनना उपलब्ध नहीं (यह Android Chrome में चलता है)। नीचे फ़ाइल से इंपोर्ट करें।</p>')+
+'<label class="btn o" style="width:100%;margin:0">📄 VCF / CSV फ़ाइल चुनें<input type="file" id="ic_f" accept=".vcf,.csv,text/vcard,text/x-vcard,text/csv" hidden></label>'+
+'<p class="note">फ़ाइल कैसे बनाएँ: फ़ोन के Contacts ऐप → ⋮ → Export (.vcf), या contacts.google.com → Export (CSV)।</p><div id="ic_out"></div>');
+if(api)$("ic_api").onclick=function(){navigator.contacts.select(["name","tel"],{multiple:true}).then(function(cs){showImp(cs.map(function(c){return{n:(c.name||[])[0]||"",p:(c.tel||[])[0]||""}}))}).catch(function(){toast("कॉन्टैक्ट नहीं चुने गए")})};
+$("ic_f").onchange=function(){var f=this.files[0];if(!f)return;f.text().then(function(t){showImp(/BEGIN:VCARD/i.test(t)?parseVcf(t):parseCsv(t))})}}
+function parseVcf(t){var out=[];t.replace(/\r\n[ \t]/g,"").split(/BEGIN:VCARD/i).forEach(function(b){var n=(/\nFN[^:]*:(.*)/i.exec(b)||[])[1]||"",p=(/\nTEL[^:]*:(.*)/i.exec(b)||[])[1]||"";n=n.trim();p=p.trim();if(n||p)out.push({n:n||p,p:p})});return out}
+function parseCsv(t){var rows=[],r=[],c="",q=false;for(var i=0;i<t.length;i++){var ch=t[i];if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}else if(ch=='"')q=true;else if(ch==","){r.push(c);c=""}else if(ch=="\n"||ch=="\r"){if(ch=="\r"&&t[i+1]=="\n")i++;r.push(c);c="";rows.push(r);r=[]}else c+=ch}r.push(c);rows.push(r);
+var h=(rows.shift()||[]).map(function(x){return x.trim().toLowerCase()}),fi=function(re){for(var k=0;k<h.length;k++)if(re.test(h[k]))return k;return-1};
+var iN=fi(/^(name|नाम|display name|full name)$/),iF=fi(/^first name|given name/),iL=fi(/^last name|family name/),iP=fi(/phone 1 - value|^phone|mobile|मोबाइल|नंबर|tel/);
+return rows.filter(function(r){return r.some(function(x){return x.trim()})}).map(function(r){var n=iN>=0?r[iN]:((iF>=0?r[iF]:"")+" "+(iL>=0?r[iL]:"")).trim();var p=iP>=0?String(r[iP]).split(":::")[0]:"";return{n:(n||p||"").trim(),p:p.trim()}}).filter(function(x){return x.n})}
+function showImp(L){var have={};LEADS.forEach(function(l){if(p10(l.phone))have[p10(l.phone)]=1});var seen={};
+L=L.filter(function(x){var k=p10(x.p);if(k&&seen[k])return false;if(k)seen[k]=1;return true});
+var nw=L.filter(function(x){return!(p10(x.p)&&have[p10(x.p)])});IMP=nw;
+$("ic_out").innerHTML='<p><b>'+nw.length+'</b> नए कॉन्टैक्ट'+(L.length-nw.length?' · '+(L.length-nw.length)+' पहले से लिस्ट में (छोड़े गए)':"")+'</p>'+(nw.length?'<label style="display:flex;gap:8px;align-items:center;color:var(--tx)"><input type="checkbox" id="ic_all" checked style="width:auto"> सभी चुनें</label><div class="imp">'+nw.map(function(x,i){return'<label><input type="checkbox" data-ii="'+i+'" checked> <span>'+esc(x.n)+'<br><span class="note">'+esc(x.p)+'</span></span></label>'}).join("")+'</div><button class="btn" id="ic_go" type="button" style="width:100%">✅ चुने हुए जोड़ें</button>':"");
+if(!nw.length)return;$("ic_all").onchange=function(){var v=this.checked;$$("[data-ii]").forEach(function(c){c.checked=v})};
+$("ic_go").onclick=function(){var sel=$$("[data-ii]").filter(function(c){return c.checked}).map(function(c){return IMP[+c.getAttribute("data-ii")]});if(!sel.length)return;
+var i=0,now=Date.now();(function nx(){if(i>=sel.length){closeMd();toast(sel.length+" कॉन्टैक्ट लिस्ट में जुड़ गए ✅");return}var b=C.Fs.writeBatch(C.db);sel.slice(i,i+400).forEach(function(x,k){b.set(D("leads",rid()),{name:x.n,phone:x.p,status:"new",next:"",log:[],custom:{},created:now,up:now-k})});b.commit().catch(function(x){toast(mapErr(x))});i+=400;nx()})()}}
+var IMP=[];
+function exportX(){if(!LEADS.length)return toast("लिस्ट खाली है");var fl=ME.fields||[],h=["नाम","मोबाइल","स्थिति","अगली तारीख","आख़िरी बात"].concat(fl),q=function(v){return'"'+String(v==null?"":v).replace(/"/g,'""')+'"'};
+var rows=LEADS.map(function(l){return[l.name,l.phone,stOf(l.status)[1],fd(l.next),((l.log||[])[0]||{}).t||""].concat(fl.map(function(f){return(l.custom||{})[f]||""}))});
+var b=new Blob(["﻿"+[h].concat(rows).map(function(r){return r.map(q).join(",")}).join("\r\n")],{type:"text/csv;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="SKJ_meri_list_"+today()+".csv";document.body.appendChild(a);a.click();a.remove()}
+
+/* ---------- profile ---------- */
+function meHTML(){return'<div class="card"><h3>👤 मेरी प्रोफाइल</h3><div class="g2"><div><label>नाम</label><input id="me_n" value="'+esc(ME.name||U.displayName||"")+'"></div><div><label>मोबाइल</label><input id="me_m" value="'+esc(ME.mobile||"")+'"></div><div><label>SKJ ID / स्पॉन्सर</label><input id="me_s" value="'+esc(ME.sponsor||"")+'"></div>'+(U.local?"":'<div><label>ईमेल (ID)</label><input value="'+esc(U.email)+'" readonly></div>')+'</div>'+
+'<label>लिस्ट के अपने खाने (हर लाइन में एक)</label><textarea id="me_f">'+esc((ME.fields||[]).join("\n"))+'</textarea><button class="btn" data-a="saveMe" type="button" style="margin-top:12px">💾 सेव करें</button></div>'+
+(U.local?'<div class="card" style="margin-top:12px"><h3>📱 फ़ोन मोड — डेटा सिर्फ़ इसी डिवाइस में</h3><p class="note">आपकी लिस्ट और बोर्ड किसी सर्वर पर नहीं जाते — सिर्फ़ इसी फ़ोन/कंप्यूटर के ब्राउज़र में रहते हैं। ब्राउज़र का डेटा (Clear data) मिटाने या फ़ोन बदलने पर डेटा चला जाएगा, इसलिए हफ़्ते में एक बार बैकअप फ़ाइल बनाकर WhatsApp/Drive पर रख लें।</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="bk_dl" type="button">💾 बैकअप फ़ाइल बनाएँ</button><label class="btn o sm" style="margin:0">♻️ बैकअप से वापस लाएँ<input type="file" id="bk_up" accept=".json,application/json" hidden></label></div></div>':'<div class="card" style="margin-top:12px"><h3>🔒 सुरक्षा</h3><p class="note">'+(U.emailVerified?"✅ ईमेल सत्यापित है।":"⚠️ ईमेल अभी सत्यापित नहीं — बनाते समय भेजे गए ईमेल का लिंक दबाएँ, ताकि पासवर्ड रीसेट पक्का पहुँचे।")+'</p><p class="note">आपकी लिस्ट और व्हाइटबोर्ड सिर्फ़ आपकी ID से खुलते हैं — कंपनी के ERP से अलग। पासवर्ड भूलें तो लॉगिन पेज पर "पासवर्ड भूले?" दबाएँ; डेटा वैसा ही रहेगा।</p><button class="btn o sm" id="me_rp" type="button">📧 पासवर्ड बदलने का लिंक ईमेल पर भेजें</button> <label class="btn o sm" style="margin:0">♻️ फ़ोन मोड का बैकअप यहाँ लाएँ<input type="file" id="bk_up" accept=".json,application/json" hidden></label></div>')+
+'<p class="note" style="text-align:center;margin-top:16px"><a href="./" style="color:var(--gold)">🌐 SKJ वेबसाइट</a> · कुल नाम: '+LEADS.length+' · बोर्ड: '+BOARDS.length+'</p>'}
+document.addEventListener("click",function(e){if(e.target.id=="bk_dl"&&C.exportAll){var b=new Blob([C.exportAll()],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="SKJ_mera_desk_backup_"+today()+".json";document.body.appendChild(a);a.click();a.remove();toast("बैकअप फ़ाइल बन गई ✅")}});
+document.addEventListener("change",function(e){if(e.target.id!="bk_up")return;var f=e.target.files[0];e.target.value="";if(!f)return;f.text().then(function(t){var o=JSON.parse(t);if(o.app!="skj-desk")throw 0;if(!confirm("बैकअप से डेटा वापस लाएँ? (मौजूदा नाम भी रहेंगे)"))return;if(C.importAll){C.importAll(o);toast("डेटा वापस आ गया ✅");return}
+var ks=Object.keys(o.docs||{}),i=0;(function nx(){if(i>=ks.length){toast(ks.length+" चीज़ें क्लाउड में आ गईं ✅");return}var b=C.Fs.writeBatch(C.db);ks.slice(i,i+300).forEach(function(k){var path=k.replace(/^members\/[^\/]+/,"members/"+U.uid).split("/");b.set(C.Fs.doc.apply(null,[C.db].concat(path)),o.docs[k],{merge:true})});i+=300;b.commit().then(nx).catch(function(x){toast(mapErr(x))})})()}).catch(function(){toast("यह सही बैकअप फ़ाइल नहीं है")})});
+function saveMe(){var fl=$("me_f").value.split("\n").map(function(x){return x.trim()}).filter(Boolean).slice(0,30);C.Fs.setDoc(D(),{name:$("me_n").value.trim(),mobile:$("me_m").value.trim(),sponsor:$("me_s").value.trim(),email:U.email||"",fields:fl},{merge:true}).then(function(){toast("सेव हो गया ✅")}).catch(function(x){toast(mapErr(x))})}
+document.addEventListener("click",function(e){if(e.target.id=="me_rp")C.Au.sendPasswordResetEmail(C.auth,U.email).then(function(){toast("लिंक "+U.email+" पर भेज दिया ✅")}).catch(function(x){toast(mapErr(x))})});
+
+/* ---------- whiteboards ---------- */
+function boardsHTML(){var L=BOARDS.slice().sort(function(a,b){return(b.up||0)-(a.up||0)});
+return'<div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h3 style="margin:0">✏️ मेरे व्हाइटबोर्ड</h3><button class="btn sm" data-a="nb" type="button">＋ नया बोर्ड</button></div><p class="note">उँगली, स्टाइलस पेन या माउस से लिखें — प्लान समझाने, हिसाब लगाने या नोट्स के लिए। अपने-आप सेव होता है।</p>'+
+(L.length?'<div class="bl">'+L.map(function(b){return'<div class="bi"><div data-a="ob" data-id="'+b.id+'" style="padding:0">'+(b.thumb?'<img src="'+b.thumb+'" alt="">':'<span class="ph"></span>')+'</div><div><span data-a="ob" data-id="'+b.id+'" style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(b.title||"बोर्ड")+'</span><span data-a="db" data-id="'+b.id+'" style="cursor:pointer">🗑</span></div></div>'}).join("")+'</div>':'<div class="card" style="text-align:center;margin-top:14px"><div style="font-size:44px">✏️</div><p>अभी कोई बोर्ड नहीं</p><button class="btn" data-a="nb" type="button">＋ पहला बोर्ड बनाएँ</button></div>')}
+function delBoard(id){var b=BOARDS.find(function(x){return x.id==id});if(!b||!confirm("'"+(b.title||"बोर्ड")+"' हटाएँ?"))return;var bt=C.Fs.writeBatch(C.db);bt.delete(D("boards",id));bt.delete(D("boarddata",id));bt.commit().catch(function(x){toast(mapErr(x))})}
+
+var WB={id:null,w:1600,h:1000,bg:"white",strokes:[],redo:[],ink:"",tool:"pen",col:"#1b2a7a",size:6,penOnly:false,dirty:false,timer:0};
+var COLS=["#111111","#1b2a7a","#c0392b","#1e8449","#b8862b","#8e44ad","#ffffff"],BGS=["white","lines","grid","dark"];
+var cbg=$("cbg"),cink=$("cink"),xb=cbg.getContext("2d"),xi=cink.getContext("2d"),INKIMG=null;
+$("sws").style.display="contents";$("sws").innerHTML=COLS.map(function(c){return'<button class="sw'+(c==WB.col?" on":"")+'" data-c="'+c+'" style="background:'+c+'" type="button"></button>'}).join("");
+function newBoard(){var land=innerWidth>innerHeight,id=rid(),w=1600,h=land?Math.round(1600*innerHeight/innerWidth*0.92):Math.round(1600*1.5);
+var n=BOARDS.length+1,meta={title:"बोर्ड "+n,w:w,h:Math.max(900,Math.min(3000,h)),bg:"white",thumb:"",up:Date.now()};
+C.Fs.setDoc(D("boards",id),meta).catch(function(x){toast(mapErr(x))});openBoard(id,meta,{strokes:"[]",ink:""})}
+function openBoard(id,meta,data){meta=meta||BOARDS.find(function(b){return b.id==id});if(!meta)return;
+WB.id=id;WB.w=meta.w||1600;WB.h=meta.h||1000;WB.bg=meta.bg||"white";WB.strokes=[];WB.redo=[];WB.ink="";INKIMG=null;WB.dirty=false;
+$("wbTitle").value=meta.title||"बोर्ड";$("wb").classList.add("on");$("wbst").textContent=data?"":"⏳ लोड…";fit();drawAll();
+var go=function(d){try{WB.strokes=JSON.parse(d.strokes||"[]")}catch(e){WB.strokes=[]}WB.ink=d.ink||"";$("wbst").textContent="";
+if(WB.ink){INKIMG=new Image();INKIMG.onload=drawAll;INKIMG.src=WB.ink}else drawAll()};
+if(data)go(data);else C.Fs.getDoc(D("boarddata",id)).then(function(s){go(s.exists()?s.data():{})}).catch(function(){go({})});history.pushState({wb:1},"")}
+function fit(){var box=$("wbbox"),bw=box.clientWidth-8,bh=box.clientHeight-8,k=Math.min(bw/WB.w,bh/WB.h),el=$("wbst2");
+el.style.width=Math.round(WB.w*k)+"px";el.style.height=Math.round(WB.h*k)+"px";var dpr=Math.min(2,devicePixelRatio||1),rw=Math.round(WB.w*k*dpr),rh=Math.round(WB.h*k*dpr);
+[cbg,cink].forEach(function(c){c.width=rw;c.height=rh});WB.k=rw/WB.w}
+addEventListener("resize",function(){if($("wb").classList.contains("on")){fit();drawAll()}});
+function drawBg(){var k=WB.k,W=cbg.width,H=cbg.height,dark=WB.bg=="dark";xb.fillStyle=dark?"#1d2b22":"#ffffff";xb.fillRect(0,0,W,H);
+if(WB.bg=="lines"||WB.bg=="grid"){xb.strokeStyle="#c9d6ea";xb.lineWidth=1;var s=50*k;for(var y=s*2;y<H;y+=s){xb.beginPath();xb.moveTo(0,y);xb.lineTo(W,y);xb.stroke()}if(WB.bg=="grid")for(var x=s;x<W;x+=s){xb.beginPath();xb.moveTo(x,0);xb.lineTo(x,H);xb.stroke()}if(WB.bg=="lines"){xb.strokeStyle="#f2a1a1";xb.beginPath();xb.moveTo(110*k,0);xb.lineTo(110*k,H);xb.stroke()}}}
+function strokePath(ctx,s,k){var p=s.p;ctx.save();ctx.globalCompositeOperation=s.e?"destination-out":"source-over";ctx.globalAlpha=s.h?0.35:1;ctx.strokeStyle=s.c;ctx.fillStyle=s.c;ctx.lineCap="round";ctx.lineJoin="round";
+if(p.length<=3){ctx.beginPath();ctx.arc(p[0]*k,p[1]*k,Math.max(.5,s.w*(p[2]||1)/2*k),0,7);ctx.fill();ctx.restore();return}
+if(s.h){ctx.lineWidth=s.w*k;ctx.beginPath();ctx.moveTo(p[0]*k,p[1]*k);for(var i=3;i<p.length;i+=3)ctx.lineTo(p[i]*k,p[i+1]*k);ctx.stroke();ctx.restore();return}
+for(var j=3;j<p.length;j+=3){var pr=(p[j+2]+p[j-1])/2;ctx.lineWidth=Math.max(.6,s.w*pr*k);ctx.beginPath();
+var mx0=j>3?(p[j-3]+p[j-6])/2:p[j-3],my0=j>3?(p[j-2]+p[j-5])/2:p[j-2],mx1=(p[j]+p[j-3])/2,my1=(p[j+1]+p[j-2])/2;ctx.moveTo(mx0*k,my0*k);ctx.quadraticCurveTo(p[j-3]*k,p[j-2]*k,mx1*k,my1*k);ctx.stroke()}ctx.restore()}
+function drawAll(){drawBg();xi.clearRect(0,0,cink.width,cink.height);if(INKIMG&&INKIMG.complete)xi.drawImage(INKIMG,0,0,cink.width,cink.height);WB.strokes.forEach(function(s){strokePath(xi,s,WB.k)})}
+/* drawing */
+var CUR=null,PID=null;
+function pt(e){var r=cink.getBoundingClientRect();return[Math.round((e.clientX-r.left)/r.width*WB.w*10)/10,Math.round((e.clientY-r.top)/r.height*WB.h*10)/10,e.pointerType=="pen"&&e.pressure>0?Math.round(Math.min(1.6,0.3+e.pressure*1.4)*100)/100:1]}
+cink.addEventListener("pointerdown",function(e){if(WB.penOnly&&e.pointerType=="touch")return;if(CUR)return;e.preventDefault();PID=e.pointerId;try{cink.setPointerCapture(e.pointerId)}catch(x){}
+var t=WB.tool;CUR={c:t=="er"?"#000":WB.col,w:t=="er"?WB.size*4:(t=="hl"?WB.size*5:WB.size),e:t=="er"?1:0,h:t=="hl"?1:0,p:pt(e)};WB.redo=[];liveDraw()});
+cink.addEventListener("pointermove",function(e){if(!CUR||e.pointerId!==PID)return;e.preventDefault();var ev=e.getCoalescedEvents?e.getCoalescedEvents():[e];if(!ev.length)ev=[e];
+ev.forEach(function(q){var a=pt(q),p=CUR.p,L=p.length;if(Math.abs(a[0]-p[L-3])+Math.abs(a[1]-p[L-2])<1.2)return;p.push(a[0],a[1],a[2])});liveDraw()});
+function endStroke(e){if(!CUR||(e&&e.pointerId!==PID))return;WB.strokes.push(CUR);CUR=null;PID=null;drawAll();markDirty()}
+["pointerup","pointercancel"].forEach(function(n){cink.addEventListener(n,endStroke)});
+var raf=0;function liveDraw(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;if(!CUR)return;if(CUR.h||CUR.e){drawAll();strokePath(xi,CUR,WB.k)}else{var p=CUR.p,n=p.length/3;var tmp={c:CUR.c,w:CUR.w,e:0,h:0,p:p.slice(Math.max(0,(n-4)*3))};if(n<=4)tmp.p=p.slice();strokePath(xi,tmp,WB.k)}})}
+/* toolbar */
+$("wt").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+if(b.hasAttribute("data-tool")){WB.tool=b.getAttribute("data-tool");$$("[data-tool]").forEach(function(x){x.classList.toggle("on",x===b)})}
+else if(b.hasAttribute("data-c")){WB.col=b.getAttribute("data-c");$("wbCol").value=WB.col;$$("#sws .sw").forEach(function(x){x.classList.toggle("on",x===b)});if(WB.tool=="er"){WB.tool="pen";$$("[data-tool]").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-tool")=="pen")})}}});
+$("wbCol").oninput=function(){WB.col=this.value;$$("#sws .sw").forEach(function(x){x.classList.remove("on")})};
+$("wbSize").oninput=function(){WB.size=+this.value};
+$("wbUndo").onclick=function(){if(!WB.strokes.length)return;WB.redo.push(WB.strokes.pop());drawAll();markDirty()};
+$("wbRedo").onclick=function(){if(!WB.redo.length)return;WB.strokes.push(WB.redo.pop());drawAll();markDirty()};
+$("wbPen").onclick=function(){WB.penOnly=!WB.penOnly;this.textContent=WB.penOnly?"🖊️ऑन":"🖊️ऑफ़";this.classList.toggle("on",WB.penOnly);toast(WB.penOnly?"अब सिर्फ़ स्टाइलस पेन से लिखेगा — हथेली/उँगली से नहीं":"उँगली और पेन दोनों से लिख सकते हैं")};
+$("wbBg").onclick=function(){WB.bg=BGS[(BGS.indexOf(WB.bg)+1)%BGS.length];drawAll();markDirty(true)};
+$("wbClr").onclick=function(){if(!confirm("पूरा बोर्ड साफ़ करें?"))return;WB.strokes=[];WB.redo=[];WB.ink="";INKIMG=null;drawAll();markDirty(true)};
+$("wbDl").onclick=function(){var c=document.createElement("canvas");c.width=cbg.width;c.height=cbg.height;var x=c.getContext("2d");x.drawImage(cbg,0,0);x.drawImage(cink,0,0);c.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=($("wbTitle").value||"board")+".png";document.body.appendChild(a);a.click();a.remove()})};
+$("wbFs").onclick=function(){var el=$("wb");if(!document.fullscreenElement&&el.requestFullscreen)el.requestFullscreen().then(function(){setTimeout(function(){fit();drawAll()},200)}).catch(function(){});else if(document.exitFullscreen)document.exitFullscreen().catch(function(){})};
+document.addEventListener("fullscreenchange",function(){setTimeout(function(){if($("wb").classList.contains("on")){fit();drawAll()}},200)});
+$("wbTitle").oninput=function(){markDirty(true)};
+function closeBoard(){if(!$("wb").classList.contains("on"))return;saveBoard();$("wb").classList.remove("on");if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen().catch(function(){})}
+$("wbBack").onclick=function(){if(history.state&&history.state.wb)history.back();else closeBoard()};
+addEventListener("popstate",function(){closeBoard()});
+document.addEventListener("keydown",function(e){if(!$("wb").classList.contains("on"))return;if((e.ctrlKey||e.metaKey)&&e.key=="z"){e.preventDefault();(e.shiftKey?$("wbRedo"):$("wbUndo")).click()}});
+/* saving — तेज़: पहले फ़ोन में, फिर पीछे से क्लाउड */
+function markDirty(now){WB.dirty=true;$("wbst").textContent="● बदलाव";clearTimeout(WB.timer);WB.timer=setTimeout(saveBoard,now?300:1500)}
+function saveBoard(){if(!WB.dirty||!WB.id)return;WB.dirty=false;clearTimeout(WB.timer);var id=WB.id,js=JSON.stringify(WB.strokes);
+if(js.length>700000){var c=document.createElement("canvas");c.width=Math.min(cink.width,2000);c.height=Math.round(c.width*WB.h/WB.w);c.getContext("2d").drawImage(cink,0,0,c.width,c.height);WB.ink=c.toDataURL("image/png");if(WB.ink.length>800000)WB.ink=c.toDataURL("image/webp",.85);INKIMG=new Image();INKIMG.src=WB.ink;WB.strokes=[];WB.redo=[];js="[]"}
+var t=document.createElement("canvas");t.width=320;t.height=Math.round(320*WB.h/WB.w);var tx=t.getContext("2d");tx.drawImage(cbg,0,0,t.width,t.height);tx.drawImage(cink,0,0,t.width,t.height);
+var b=C.Fs.writeBatch(C.db);b.set(D("boarddata",id),{strokes:js,ink:WB.ink||""});b.set(D("boards",id),{title:$("wbTitle").value.trim()||"बोर्ड",w:WB.w,h:WB.h,bg:WB.bg,thumb:t.toDataURL("image/jpeg",.6),up:Date.now()},{merge:true});
+$("wbst").textContent="✓ सेव";b.commit().then(function(){if(!WB.dirty)$("wbst").textContent="✓ सेव (क्लाउड)"}).catch(function(x){$("wbst").textContent="⚠️ "+mapErr(x)})}
+addEventListener("pagehide",saveBoard);document.addEventListener("visibilitychange",function(){if(document.hidden)saveBoard()});
+
+if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+})();
+</script></body></html>

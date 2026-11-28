@@ -1,0 +1,45 @@
+SKJ वेबसाइट + "मेरा डेस्क" — स्टेप
+===================================
+
+ज़रूरी बात: "मेरा डेस्क" अब आपके कंपनी वाले Firebase (skj-bill-data) को बिल्कुल नहीं छूता।
+कंपनी के Firebase Rules में कुछ भी जोड़ना/बदलना नहीं है।
+
+भाग 1 — GitHub पर फ़ाइलें (कंप्यूटर से)
+  1. ZIP पर Right-click → Extract All → Extract
+  2. खुले फ़ोल्डर में Ctrl + A
+  3. GitHub repo → Add file → Upload files → फ़ाइलें खींचकर छोड़ें → Commit changes
+     (ZIP को सीधे upload न करें)
+  4. ये फ़ाइलें repo से हटा दें (फ़ाइल खोलें → ⋯ → Delete file → Commit):
+     SKJ_photos_fix.zip, UPLOAD-KAISE-KAREN.md, config.js, supabase_setup.sql
+
+बस — इतने से सब चालू। "मेरा डेस्क" अभी "📱 फ़ोन मोड" में चलेगा:
+  • कोई लॉगिन नहीं, कोई सर्वर नहीं — हर व्यक्ति का डेटा सिर्फ़ उसके अपने फ़ोन में
+  • "👤 मैं" में "💾 बैकअप फ़ाइल बनाएँ" से हफ़्ते में एक बार बैकअप रख लें
+  • कमी: फ़ोन बदलने या ब्राउज़र डेटा मिटाने पर बैकअप से ही वापस आएगा; ईमेल से रीसेट वाली सुविधा नहीं
+
+भाग 2 (बाद में, जब चाहें) — ID/पासवर्ड + ईमेल रीसेट + हर डिवाइस पर सिंक
+  इसके लिए मेरा डेस्क का अपना अलग, नया Firebase प्रोजेक्ट बनाएँ (मुफ़्त):
+  1. console.firebase.google.com → "Add project" → नाम: skj-desk → Analytics बंद → Create
+  2. Build → Authentication → Get started → Email/Password → Enable → Save
+  3. Build → Firestore Database → Create database → Location: asia-south1 (Mumbai) → Production mode
+  4. Firestore → Rules टैब → सब हटाकर यह डालें → Publish:
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /members/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+      match /{rest=**} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+  }
+}
+
+  5. ⚙️ Project settings → नीचे "Your apps" → </> (Web) → नाम skj-desk → Register
+     वहाँ apiKey, authDomain, projectId, appId दिखेंगे।
+  6. GitHub repo में desk-config.js खोलें → ✏️ (Edit) → चारों खाली "" में ये भरें → Commit changes
+  7. Authentication → Settings → Authorized domains → Add: ravi9131580383.github.io
+
+  इसके बाद मेरा डेस्क खोलने पर लॉगिन / नई ID / पासवर्ड भूले — सब चालू हो जाएगा।
+  फ़ोन मोड का डेटा: पहले फ़ोन मोड में बैकअप बनाएँ → लॉगिन के बाद "👤 मैं" → "♻️ फ़ोन मोड का बैकअप यहाँ लाएँ"।
