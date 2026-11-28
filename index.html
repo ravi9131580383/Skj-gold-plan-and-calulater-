@@ -4,13 +4,14 @@
 <title>स्वर्ण कला ज्वेलर्स – SKJ | Hallmark Gold · Plan · Calculator</title>
 <meta name="description" content="Suvarna Kala Jewellers Pvt. Ltd. — BIS HUID हॉलमार्क गोल्ड, आज का लाइव रेट, गोल्ड कैलकुलेटर, SKJ प्लान और कमाई कैलकुलेटर।">
 <meta name="theme-color" content="#0b0907">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("skj_theme")||"gold");if(localStorage.getItem("skj_lang")=="en")document.documentElement.lang="en"}catch(e){}</script>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
-<meta property="og:title" content="स्वर्ण कला ज्वेलर्स – SKJ"><meta property="og:image" content="img/banner.jpg">
+<meta property="og:title" content="स्वर्ण कला ज्वेलर्स – SKJ"><meta property="og:image" content="banner.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Tiro+Devanagari+Hindi&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0907;--bg2:#120d06;--card:#18120a;--gold:#e8bd52;--gold2:#b8862b;--gold3:#fff0b8;--tx:#f6ecd2;--mut:#b3a27c;--line:#33280f;--ok:#5fd08a;--bad:#ff7a7a;--r:18px}
+:root{--in:#0d0a05;--c1:#1c150a;--c2:#130e06;--hdr:rgba(11,9,7,.88);--tk1:#2a1d06;--tk2:#120d06;--bg:#0b0907;--bg2:#120d06;--card:#18120a;--gold:#e8bd52;--gold2:#b8862b;--gold3:#fff0b8;--tx:#f6ecd2;--mut:#b3a27c;--line:#33280f;--ok:#5fd08a;--bad:#ff7a7a;--r:18px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 Poppins,"Tiro Devanagari Hindi",system-ui,sans-serif;overflow-x:hidden}
 img{max-width:100%;display:block}a{color:var(--gold)}
@@ -21,7 +22,7 @@ h1,h2,h3{font-family:"Tiro Devanagari Hindi",Poppins,serif;margin:0 0 .4em;line-
 @keyframes shine{to{background-position:250% center}}
 /* header */
 header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s;padding-top:env(safe-area-inset-top,0)}
-header.sc{background:rgba(11,9,7,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 24px rgba(0,0,0,.5)}
+header.sc{background:var(--hdr);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 24px rgba(0,0,0,.5)}
 .hb{display:flex;align-items:center;gap:12px;height:64px}
 .hb .lg{display:flex;align-items:center;gap:10px;text-decoration:none}.hb .lg img{height:44px;width:auto}
 .hb .lg b{font:800 17px Cinzel,serif;color:var(--gold);letter-spacing:1px;line-height:1.05}.hb .lg small{display:block;font:500 10px Poppins;color:var(--mut);letter-spacing:2px}
@@ -31,15 +32,15 @@ header.sc{background:rgba(11,9,7,.86);backdrop-filter:blur(12px);-webkit-backdro
 .btn:hover{filter:brightness(1.08);transform:translateY(-2px)}.btn:active{transform:scale(.97)}
 .btn.o{background:transparent;color:var(--gold);border:1px solid var(--gold2);box-shadow:none}.btn.sm{padding:7px 14px;font-size:13px}
 .mb{display:none;background:none;border:1px solid var(--gold2);color:var(--gold);border-radius:10px;width:42px;height:40px;font-size:20px;cursor:pointer}
-@media(max-width:980px){.hb nav{position:fixed;top:calc(64px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;background:rgba(11,9,7,.97);padding:10px 18px 18px;gap:2px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--gold2)}
+@media(max-width:980px){.hb nav{position:fixed;top:calc(64px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;background:var(--hdr);padding:10px 18px 18px;gap:2px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--gold2)}
 .hb nav.op{transform:none}.hb nav a{padding:12px 14px}.mb{display:block}.hb .sp{flex:1}}
 /* ticker */
-.tk{position:fixed;left:0;right:0;top:calc(64px + env(safe-area-inset-top,0px));z-index:49;background:linear-gradient(90deg,#2a1d06,#120d06,#2a1d06);border-bottom:1px solid #4a3812;overflow:hidden;height:34px;font-size:13px}
+.tk{position:fixed;left:0;right:0;top:calc(64px + env(safe-area-inset-top,0px));z-index:49;background:linear-gradient(90deg,var(--tk1),var(--tk2),var(--tk1));border-bottom:1px solid #4a3812;overflow:hidden;height:34px;font-size:13px}
 .tk .tr{display:flex;gap:40px;white-space:nowrap;position:absolute;left:0;top:0;line-height:34px;animation:mq 38s linear infinite;padding-left:100%}
 .tk span b{color:var(--gold)}@keyframes mq{to{transform:translateX(-100%)}}
 /* hero */
 .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px 0 60px}
-.hero .bgi{position:absolute;inset:0;background:url(img/banner.jpg) center/cover no-repeat;filter:brightness(.32) saturate(1.1);transform:scale(1.08);animation:kb 22s ease-in-out infinite alternate}
+.hero .bgi{position:absolute;inset:0;background:url(banner.jpg) center/cover no-repeat;filter:brightness(.32) saturate(1.1);transform:scale(1.08);animation:kb 22s ease-in-out infinite alternate}
 @keyframes kb{to{transform:scale(1.18) translate(-2%,-1%)}}
 .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 75% 30%,rgba(232,189,82,.18),transparent 60%),linear-gradient(180deg,rgba(11,9,7,.2),var(--bg) 96%)}
 #dust{position:absolute;inset:0;z-index:1;pointer-events:none}
@@ -69,7 +70,7 @@ section.alt{background:linear-gradient(180deg,var(--bg),var(--bg2) 20%,var(--bg2
 .sh small{color:var(--gold2);letter-spacing:4px;font:600 12px Poppins;text-transform:uppercase}
 .sh h2{font-size:clamp(26px,3.6vw,42px);margin:8px 0}
 .sh p{color:var(--mut)}
-.card{background:linear-gradient(180deg,#1c150a,#130e06);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s,border-color .3s}
+.card{background:linear-gradient(180deg,var(--c1),var(--c2));border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s,border-color .3s}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:900px){.g4{grid-template-columns:1fr 1fr}.g3,.g2{grid-template-columns:1fr}}
 @media(max-width:520px){.g4{grid-template-columns:1fr}}
@@ -83,7 +84,7 @@ section.alt{background:linear-gradient(180deg,var(--bg),var(--bg2) 20%,var(--bg2
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.gt,.tk .tr,.hero .bgi{animation:none}}
 /* inputs */
 label{display:block;font-size:12px;color:var(--mut);margin:10px 0 4px}
-input,select{width:100%;background:#0d0a05;color:var(--tx);border:1px solid #5a4417;border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s}
+input,select{width:100%;background:var(--in);color:var(--tx);border:1px solid #5a4417;border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s}
 input:focus,select:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,189,82,.18)}
 input[type=range]{padding:0;height:6px;accent-color:var(--gold);border:0;background:#3a2c10}
 .rw{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #3d2f12;gap:10px}.rw b{color:var(--gold);white-space:nowrap}.rw.t{border:0;font-size:19px}.rw.t b{font-size:24px;color:var(--gold3)}
@@ -91,7 +92,7 @@ input[type=range]{padding:0;height:6px;accent-color:var(--gold);border:0;backgro
 .kbar{height:30px;border-radius:15px;background:#2b0f0f;overflow:hidden;position:relative;margin:14px 0 6px;border:1px solid #5a2020}
 .kbar i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#b8862b,#ffe39a);transition:width .8s cubic-bezier(.2,.8,.2,1);border-radius:15px}
 .kbar span{position:absolute;right:12px;top:0;line-height:30px;font-size:12px;color:#ffb4b4;font-weight:600}
-.kchips{display:flex;gap:8px;flex-wrap:wrap}.kchips button,.chips button{background:#0d0a05;border:1px solid var(--gold2);color:var(--gold);border-radius:20px;padding:7px 14px;font:inherit;font-size:13px;cursor:pointer;transition:.2s}
+.kchips{display:flex;gap:8px;flex-wrap:wrap}.kchips button,.chips button{background:var(--in);border:1px solid var(--gold2);color:var(--gold);border-radius:20px;padding:7px 14px;font:inherit;font-size:13px;cursor:pointer;transition:.2s}
 .kchips button.on,.chips button.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204;font-weight:600}
 /* gallery */
 .chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none;justify-content:center;flex-wrap:wrap}
@@ -122,21 +123,21 @@ input[type=range]{padding:0;height:6px;accent-color:var(--gold);border:0;backgro
 .calcw{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
 @media(max-width:960px){.calcw{grid-template-columns:1fr}}
 .calcw>*,.g2>*,.g3>*,.g4>*,.leg,.pkr>*{min-width:0}.stp{min-width:0}
-.tabs{display:inline-flex;background:#0d0a05;border:1px solid var(--gold2);border-radius:40px;padding:4px;gap:4px;margin-bottom:16px;flex-wrap:wrap}
+.tabs{display:inline-flex;background:var(--in);border:1px solid var(--gold2);border-radius:40px;padding:4px;gap:4px;margin-bottom:16px;flex-wrap:wrap}
 .tabs button{background:none;border:0;color:var(--gold);font:600 14px Poppins;padding:9px 18px;border-radius:30px;cursor:pointer}
 .tabs button.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1204}
-.leg{border:1px solid var(--line);border-radius:16px;padding:14px;background:#0f0b05}
+.leg{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--in)}
 .leg h4{margin:0 0 6px;font-size:15px;display:flex;justify-content:space-between}.leg.L h4{color:#7fb2ff}.leg.R h4{color:#ff86c0}
 .pkr{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .pkr div{text-align:center}.pkr label{margin:4px 0 2px;text-align:center}
 .stp{display:flex;align-items:center;border:1px solid #5a4417;border-radius:12px;overflow:hidden}
-.stp button{background:#21180a;border:0;color:var(--gold);width:34px;height:42px;font-size:20px;cursor:pointer;flex:none}
-.stp input{border:0;border-radius:0;text-align:center;padding:8px 0;min-width:0;flex:1;width:auto;background:#0d0a05;font-weight:600;color:var(--gold3)}
+.stp button{background:var(--tk1);border:0;color:var(--gold);width:34px;height:42px;font-size:20px;cursor:pointer;flex:none}
+.stp input{border:0;border-radius:0;text-align:center;padding:8px 0;min-width:0;flex:1;width:auto;background:var(--in);font-weight:600;color:var(--gold3)}
 .res{position:sticky;top:110px}
 .tot{font:800 clamp(38px,5vw,56px) Poppins;color:var(--gold3);text-align:center;margin:6px 0;text-shadow:0 0 40px rgba(232,189,82,.3)}
 .donut{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;margin:10px 0}
 .lgd div{display:flex;align-items:center;gap:8px;font-size:13px;margin:4px 0}.lgd i{width:12px;height:12px;border-radius:3px;display:inline-block}
-.sol{background:linear-gradient(135deg,#2a1d06,#140e05);border:1px solid var(--gold);border-radius:20px;padding:20px}
+.sol{background:linear-gradient(135deg,var(--tk1),var(--c2));border:1px solid var(--gold);border-radius:20px;padding:20px}
 .sol .bigbv{font:800 clamp(30px,4vw,44px) Poppins;color:var(--gold3)}
 .scn{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}.scn th,.scn td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right}.scn th:first-child,.scn td:first-child{text-align:left}.scn th{color:var(--gold);font-weight:600}
 .scn tr.best td{color:var(--gold3);background:rgba(232,189,82,.07)}
@@ -150,8 +151,8 @@ input[type=range]{padding:0;height:6px;accent-color:var(--gold);border:0;backgro
 /* misc */
 .huid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:900px){.huid{grid-template-columns:1fr}}
 .stamp{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;margin:14px 0}
-.stamp span{border:2px solid var(--gold);border-radius:10px;padding:8px 14px;font:700 15px Poppins;color:var(--gold3);background:#0d0a05}
-.docs a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;text-decoration:none;color:var(--tx);background:#0f0b05}
+.stamp span{border:2px solid var(--gold);border-radius:10px;padding:8px 14px;font:700 15px Poppins;color:var(--gold3);background:var(--in)}
+.docs a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;text-decoration:none;color:var(--tx);background:var(--in)}
 .cont .rw span{color:var(--mut)}
 footer{border-top:1px solid var(--line);padding:30px 0 calc(90px + env(safe-area-inset-bottom,0px));color:var(--mut);font-size:13px;text-align:center}
 .fab{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:10px}
@@ -159,188 +160,209 @@ footer{border-top:1px solid var(--line);padding:30px 0 calc(90px + env(safe-area
 .fab .wa{background:#25d366;color:#fff}.fab .up{background:#21180a;color:var(--gold);border:1px solid var(--gold2);opacity:0;pointer-events:none;transition:.3s}.fab .up.on{opacity:1;pointer-events:auto}
 .ov{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:16px}.ov.on{display:flex}
 .ov .card{width:min(440px,100%);max-height:90vh;overflow:auto}
-.lgo a{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--tx);border:1px solid var(--line);border-radius:16px;padding:14px;margin:10px 0;transition:.2s;background:#0f0b05}.lgo a:hover{border-color:var(--gold)}
+.lgo a{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--tx);border:1px solid var(--line);border-radius:16px;padding:14px;margin:10px 0;transition:.2s;background:var(--in)}.lgo a:hover{border-color:var(--gold)}
 .lgo a b{color:var(--gold);display:block}.lgo .i{font-size:30px}
 .toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--gold);color:#1a1204;padding:10px 18px;border-radius:24px;font-weight:600;z-index:99}
+
+.hero{color:#f6ecd2}.hero .note{color:#cdbb92}
+.hbt{background:transparent;border:1px solid var(--gold2);color:var(--gold);border-radius:20px;height:36px;min-width:42px;padding:0 10px;font:700 13px Poppins;cursor:pointer}
+.hbt:hover{background:rgba(232,189,82,.12)}
+#thp{position:fixed;top:calc(104px + env(safe-area-inset-top,0px));right:14px;z-index:70;background:var(--c1);border:1px solid var(--gold2);border-radius:16px;padding:14px;display:none;box-shadow:0 14px 40px rgba(0,0,0,.5);width:240px}
+#thp.on{display:block}#thp b{color:var(--gold);display:block;margin-bottom:8px}
+#thp button{display:flex;align-items:center;gap:10px;width:100%;background:var(--in);border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:8px 10px;margin:6px 0;font:inherit;font-size:14px;cursor:pointer}
+#thp button.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(232,189,82,.25)}#thp i{width:22px;height:22px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.3)}
+@media(max-width:560px){#loginBtn .lt{display:none}.hb{gap:8px}.hb .lg span{display:none}}
+html[data-theme="maroon"]{--bg:#140608;--bg2:#1c0a0e;--card:#231014;--c1:#2a1117;--c2:#1a090c;--in:#190a0d;--hdr:rgba(20,6,8,.9);--tk1:#3a121a;--tk2:#1a080b;--gold:#f0c46a;--gold2:#b8862b;--tx:#fbeee0;--mut:#d3b58f;--line:#4a1f26}
+html[data-theme="blue"]{--bg:#070b14;--bg2:#0b1220;--card:#0f1726;--c1:#121c2e;--c2:#0b1220;--in:#0a1120;--hdr:rgba(7,11,20,.9);--tk1:#13213a;--tk2:#0a1120;--gold:#8dbbff;--gold2:#3d7fe6;--gold3:#d6e6ff;--tx:#e8f0ff;--mut:#9fb3d6;--line:#1f2e4a}
+html[data-theme="green"]{--bg:#07110c;--bg2:#0a1711;--card:#0e1b14;--c1:#112219;--c2:#0a1610;--in:#09150f;--hdr:rgba(7,17,12,.9);--tk1:#123323;--tk2:#09150f;--gold:#7be6ab;--gold2:#2bb673;--gold3:#d7ffe9;--tx:#e6fff1;--mut:#9fcfb4;--line:#1c3a2b}
+html[data-theme="light"]{--bg:#faf6ec;--bg2:#f3ead2;--card:#fff;--c1:#ffffff;--c2:#fbf4e2;--in:#fffdf6;--hdr:rgba(255,252,244,.95);--tk1:#f6e7b8;--tk2:#fff8e6;--gold:#8f5f00;--gold2:#c99a2e;--gold3:#6b4700;--tx:#2b2208;--mut:#6f5f3a;--line:#e6d9b5}
+html[data-theme="light"] .card{box-shadow:0 8px 24px rgba(120,90,20,.12)}
+html[data-theme="light"] section .gt{background-image:linear-gradient(100deg,#7a4f00,#b8862b 40%,#6b4700 60%,#a8781f);}
+html[data-theme="light"] .hero .gt{background-image:linear-gradient(100deg,#b8862b 0%,#ffe9a0 25%,#e8bd52 45%,#fff6d0 55%,#c8972f 75%,#ffe39a 100%)}
+html[data-theme="light"] .feat .ic{background:radial-gradient(circle at 30% 30%,#fff4cf,#f1dc9c)}
+html[data-theme="light"] .pk .gm,html[data-theme="light"] .tot,html[data-theme="light"] .sol .bigbv{text-shadow:none}
+html[data-theme="light"] .tk span,html[data-theme="light"] .hb nav a{color:var(--tx)}
+html[data-theme="blue"] .gt,html[data-theme="green"] .gt{background-image:linear-gradient(100deg,var(--gold2),var(--gold3) 40%,var(--gold) 60%,var(--gold2))}
 </style></head><body>
 
 <header id="hdr"><div class="wrap hb">
-<a class="lg" href="#top"><img id="logo" src="img/logo.png" alt="SKJ"><span><b>SKJ</b><small>SUVARNA KALA</small></span></a>
+<a class="lg" href="#top"><img id="logo" src="logo.png" alt="SKJ"><span><b>SKJ</b><small>SUVARNA KALA</small></span></a>
 <span class="sp"></span>
-<nav id="nav"><a href="#about">परिचय</a><a href="#collection">कलेक्शन</a><a href="#plan">प्लान</a><a href="#earn">कमाई कैलकुलेटर</a><a href="#gold">गोल्ड कैलकुलेटर</a><a href="#video">वीडियो</a><a href="#contact">संपर्क</a></nav>
-<button class="btn sm" id="loginBtn" type="button">🔐 लॉगिन</button>
+<nav id="nav"><a href="#about" data-en="About">परिचय</a><a href="#collection" data-en="Collection">कलेक्शन</a><a href="#plan" data-en="Plan">प्लान</a><a href="#earn" data-en="Income Calculator">कमाई कैलकुलेटर</a><a href="#gold" data-en="Gold Calculator">गोल्ड कैलकुलेटर</a><a href="#video" data-en="Video">वीडियो</a><a href="#contact" data-en="Contact">संपर्क</a></nav>
+<button class="hbt" id="langBtn" type="button" title="भाषा / Language">EN</button><button class="hbt" id="thBtn" type="button" title="थीम / Theme">🎨</button><button class="btn sm" id="loginBtn" type="button">🔐<span class="lt" data-en=" Login"> लॉगिन</span></button>
 <button class="mb" id="mb" type="button" aria-label="मेनू">☰</button>
 </div></header>
+<div id="thp"><b data-en="🎨 Choose theme">🎨 थीम चुनें</b><div id="thl"></div></div>
 <div class="tk"><div class="tr" id="tick"><span>📈 आज का सोना रेट लोड हो रहा है…</span></div></div>
 
 <div class="hero" id="top"><div class="bgi" id="heroBg"></div><canvas id="dust"></canvas>
 <div class="wrap">
 <div class="rv">
-<span class="pill"><i></i> BIS HUID हॉलमार्क · लाइव रेट</span>
-<h1><span class="en gt">SUVARNA KALA JEWELLERS</span><span class="gt">सोने की सच्चाई,</span><br>आपका <span class="tw" id="tw">भरोसा</span></h1>
-<p class="lead" id="tagline">शुद्ध हॉलमार्क गोल्ड + 50% Gold Coupon + ₹5 लाख तक Accidental Insurance + कमाई का अवसर — एक ही जगह।</p>
-<div class="cta"><a class="btn" href="#earn">💰 ₹1 लाख कैसे बनेगा?</a><a class="btn o" href="#video">▶ प्लान वीडियो देखें</a><a class="btn o" href="erp.html?apply=1">🏪 फ्रेंचाइज़ी आवेदन</a></div>
-<div class="stats"><div><b data-cnt="4">0</b><span>तरह की इनकम</span></div><div><b data-cnt="50" data-s="%">0</b><span>Gold Coupon</span></div><div><b data-cnt="5" data-p="₹" data-s=" लाख">0</b><span>Accidental Insurance*</span></div><div><b data-cnt="6" data-s=" अंक">0</b><span>HUID कोड</span></div></div>
+<span class="pill"><i></i> <span data-en="BIS HUID Hallmark · Live Rate">BIS HUID हॉलमार्क · लाइव रेट</span></span>
+<h1><span class="en gt">SUVARNA KALA JEWELLERS</span><span class="gt" data-en="Pure Gold,">सोने की सच्चाई,</span><br><span data-en="Your">आपका</span> <span class="tw" id="tw">भरोसा</span></h1>
+<p class="lead" id="tagline" data-en="Pure hallmark gold + 50% Gold Coupon + Accidental Insurance up to ₹5 lakh + an earning opportunity — all in one place.">शुद्ध हॉलमार्क गोल्ड + 50% Gold Coupon + ₹5 लाख तक Accidental Insurance + कमाई का अवसर — एक ही जगह।</p>
+<div class="cta"><a class="btn" href="#earn" data-en="💰 How to earn ₹1 lakh?">💰 ₹1 लाख कैसे बनेगा?</a><a class="btn o" href="#video" data-en="▶ Watch plan video">▶ प्लान वीडियो देखें</a><a class="btn o" href="erp.html?apply=1" data-en="🏪 Franchise application">🏪 फ्रेंचाइज़ी आवेदन</a></div>
+<div class="stats"><div><b data-cnt="4">0</b><span data-en="income types">तरह की इनकम</span></div><div><b data-cnt="50" data-s="%">0</b><span>Gold Coupon</span></div><div><b data-cnt="5" data-p="₹" data-s=" लाख" data-se=" lakh">0</b><span>Accidental Insurance*</span></div><div><b data-cnt="6" data-s=" अंक" data-se="">0</b><span data-en="digit HUID code">HUID कोड</span></div></div>
 </div>
 <div class="rc rv" id="rateCard">
-<h3>📈 आज का भाव <span class="note" id="rtTime">—</span></h3>
-<div class="note">सोना 24K (₹ प्रति ग्राम)</div>
+<h3><span data-en="📈 Today's rate">📈 आज का भाव</span> <span class="note" id="rtTime">—</span></h3>
+<div class="note" data-en="Gold 24K (₹ per gram)">सोना 24K (₹ प्रति ग्राम)</div>
 <div class="big" id="r24">—</div>
 <div class="row"><span>22K (₹/g)</span><b id="r22">—</b></div>
 <div class="row"><span>18K (₹/g)</span><b id="r18">—</b></div>
-<div class="row"><span>चाँदी 999 (₹/किलो)</span><b id="rag">—</b></div>
-<div class="row"><span>10 ग्राम 24K</span><b id="r10">—</b></div>
-<a class="btn sm" href="#gold" style="margin-top:14px;width:100%">🧮 अपने गहने का दाम निकालें</a>
+<div class="row"><span data-en="Silver 999 (₹/kg)">चाँदी 999 (₹/किलो)</span><b id="rag">—</b></div>
+<div class="row"><span data-en="10 grams 24K">10 ग्राम 24K</span><b id="r10">—</b></div>
+<a class="btn sm" href="#gold" style="margin-top:14px;width:100%" data-en="🧮 Price your jewellery">🧮 अपने गहने का दाम निकालें</a>
 </div>
 </div><div class="scr"></div></div>
 
 <section id="about"><div class="wrap">
-<div class="sh rv"><small>About SKJ</small><h2 class="gt">SKJ आपको क्या देता है?</h2><p>Suvarna Kala Jewellers Pvt. Ltd. — Premium Jewellery Brand • Quality • शुद्धता • भरोसा<br><span class="note" id="md">Managing Director: श्रीमती रजनी सुनील बंसल</span></p></div>
+<div class="sh rv"><small>About SKJ</small><h2 class="gt" data-en="What SKJ gives you">SKJ आपको क्या देता है?</h2><p>Suvarna Kala Jewellers Pvt. Ltd. — Premium Jewellery Brand • Quality • शुद्धता • भरोसा<br><span class="note" id="md">Managing Director: श्रीमती रजनी सुनील बंसल</span></p></div>
 <div class="g4">
-<div class="card feat rv"><span class="n">01</span><div class="ic">🏅</div><h3>शुद्ध Hallmark Gold</h3><p>HUID के साथ — BIS CARE ऐप पर खुद जाँचें</p></div>
-<div class="card feat rv"><span class="n">02</span><div class="ic">🎟️</div><h3>50% Gold Coupon</h3><p>अगली खरीद पर Redeem (*नियम व शर्तें)</p></div>
-<div class="card feat rv"><span class="n">03</span><div class="ic">🛡️</div><h3>₹5 लाख तक Insurance</h3><p>Accidental — *पॉलिसी की शर्तों के अनुसार</p></div>
-<div class="card feat rv"><span class="n">04</span><div class="ic">📈</div><h3>Business का अवसर</h3><p>बिक्री (BV) पर आधारित कमाई का मौका</p></div>
+<div class="card feat rv"><span class="n">01</span><div class="ic">🏅</div><h3 data-en="Pure Hallmark Gold">शुद्ध Hallmark Gold</h3><p data-en="With HUID — verify yourself on the BIS CARE app">HUID के साथ — BIS CARE ऐप पर खुद जाँचें</p></div>
+<div class="card feat rv"><span class="n">02</span><div class="ic">🎟️</div><h3>50% Gold Coupon</h3><p data-en="Redeem on next purchase (*T&amp;C)">अगली खरीद पर Redeem (*नियम व शर्तें)</p></div>
+<div class="card feat rv"><span class="n">03</span><div class="ic">🛡️</div><h3 data-en="Insurance up to ₹5 lakh">₹5 लाख तक Insurance</h3><p data-en="Accidental — *as per policy terms">Accidental — *पॉलिसी की शर्तों के अनुसार</p></div>
+<div class="card feat rv"><span class="n">04</span><div class="ic">📈</div><h3 data-en="Business opportunity">Business का अवसर</h3><p data-en="Earnings based on sales (BV)">बिक्री (BV) पर आधारित कमाई का मौका</p></div>
 </div>
-<div class="g2" style="margin-top:22px"><img class="rv" src="img/home1.jpg" alt="Gold" loading="lazy" style="border-radius:18px;border:1px solid var(--line);width:100%;height:340px;object-fit:cover"><img class="rv" src="img/home2.jpg" alt="SKJ" loading="lazy" style="border-radius:18px;border:1px solid var(--line);width:100%;height:340px;object-fit:cover"></div>
+<div class="g2" style="margin-top:22px"><img class="rv" src="home1.jpg" alt="Gold" loading="lazy" style="border-radius:18px;border:1px solid var(--line);width:100%;height:340px;object-fit:cover"><img class="rv" src="home2.jpg" alt="SKJ" loading="lazy" style="border-radius:18px;border:1px solid var(--line);width:100%;height:340px;object-fit:cover"></div>
 </div></section>
 
 <section class="alt" id="truth"><div class="wrap">
-<div class="sh rv"><small>Gold Truth</small><h2>कैरेट का खेल — <span class="gt">नुकसान का हिसाब</span></h2><p>पहले भाव 24 कैरेट का बताया जाता था, पर गहना अक्सर कम कैरेट का होता था। खुद देखिए कितना असली सोना मिला।</p></div>
+<div class="sh rv"><small>Gold Truth</small><h2 data-en="The carat trick — &lt;span class=&quot;gt&quot;&gt;count your loss&lt;/span&gt;">कैरेट का खेल — <span class="gt">नुकसान का हिसाब</span></h2><p data-en="The rate quoted was for 24 carat, but jewellery was often lower carat. See how much real gold you actually got.">पहले भाव 24 कैरेट का बताया जाता था, पर गहना अक्सर कम कैरेट का होता था। खुद देखिए कितना असली सोना मिला।</p></div>
 <div class="huid">
 <div class="card rv">
-<label>आपने कितने रुपये दिए (₹)</label><input id="kAmt" type="number" inputmode="numeric" value="100000">
-<label>गहना असल में कितने कैरेट का निकला</label>
+<label data-en="Amount you paid (₹)">आपने कितने रुपये दिए (₹)</label><input id="kAmt" type="number" inputmode="numeric" value="100000">
+<label data-en="Actual carat of the jewellery">गहना असल में कितने कैरेट का निकला</label>
 <div class="kchips" id="kch"></div>
 <div class="kbar"><i id="kFill"></i><span id="kLossP"></span></div>
-<div class="rw"><span>असली सोना (कीमत)</span><b id="kGot">—</b></div>
-<div class="rw t"><span>आपका नुकसान</span><b id="kLoss" style="color:#ff9a9a">—</b></div>
-<p class="note">हिसाब: 14K = 58.5%, 16K = 66.7%, 18K = 75%, 20K = 83.3%, 22K = 91.6% शुद्ध सोना।</p>
+<div class="rw"><span data-en="Real gold (value)">असली सोना (कीमत)</span><b id="kGot">—</b></div>
+<div class="rw t"><span data-en="Your loss">आपका नुकसान</span><b id="kLoss" style="color:#ff9a9a">—</b></div>
+<p class="note" data-en="Purity: 14K = 58.5%, 16K = 66.7%, 18K = 75%, 20K = 83.3%, 22K = 91.6% pure gold.">हिसाब: 14K = 58.5%, 16K = 66.7%, 18K = 75%, 20K = 83.3%, 22K = 91.6% शुद्ध सोना।</p>
 </div>
 <div class="card rv">
 <h3 class="gt" style="font-size:22px">BIS Hallmark + HUID</h3>
-<p>23 जून 2021 से हॉलमार्किंग अनिवार्य (चरणबद्ध)। हर गहने पर तीन निशान:</p>
+<p data-en="Hallmarking mandatory since 23 June 2021 (phased). Three marks on every piece:">23 जून 2021 से हॉलमार्किंग अनिवार्य (चरणबद्ध)। हर गहने पर तीन निशान:</p>
 <div class="stamp"><span>BIS ▲</span><span>22K916</span><span>HUID · A1B2C3</span></div>
-<ul class="chk"><li>जितना लिखा, उतना शुद्ध — कैरेट के नाम पर धोखा नहीं</li><li>BIS CARE ऐप में HUID डालकर कैरेट, प्रकार और ज्वेलर खुद जाँचें</li><li>SKJ का हर बिल QR से ऑनलाइन सत्यापित होता है</li></ul>
-<label>SKJ बिल सत्यापित करें (बिल पर छपा कोड)</label>
-<div style="display:flex;gap:8px"><input id="vIn" placeholder="जैसे ktoefwariq" autocapitalize="off"><button class="btn sm" id="vGo" type="button">जाँचें</button></div>
+<ul class="chk"><li data-en="As pure as marked — no carat cheating">जितना लिखा, उतना शुद्ध — कैरेट के नाम पर धोखा नहीं</li><li data-en="Enter the HUID in the BIS CARE app to check carat, type and jeweller">BIS CARE ऐप में HUID डालकर कैरेट, प्रकार और ज्वेलर खुद जाँचें</li><li data-en="Every SKJ bill can be verified online by QR">SKJ का हर बिल QR से ऑनलाइन सत्यापित होता है</li></ul>
+<label data-en="Verify an SKJ bill (code printed on bill)">SKJ बिल सत्यापित करें (बिल पर छपा कोड)</label>
+<div style="display:flex;gap:8px"><input id="vIn" placeholder="जैसे ktoefwariq" autocapitalize="off"><button class="btn sm" id="vGo" type="button" data-en="Check">जाँचें</button></div>
 </div>
 </div>
 </div></section>
 
 <section id="collection"><div class="wrap">
-<div class="sh rv"><small>Collection</small><h2 class="gt">गोल्ड ज्वेलरी कलेक्शन</h2><p>BIS HUID हॉलमार्क गोल्ड ज्वेलरी — फोटो पर टैप करके बड़ा देखें।</p></div>
+<div class="sh rv"><small>Collection</small><h2 class="gt" data-en="Gold Jewellery Collection">गोल्ड ज्वेलरी कलेक्शन</h2><p data-en="BIS HUID hallmarked gold jewellery — tap a photo to enlarge.">BIS HUID हॉलमार्क गोल्ड ज्वेलरी — फोटो पर टैप करके बड़ा देखें।</p></div>
 <div class="chips" id="chips"></div>
 <div class="gal" id="gal"></div>
 </div></section>
 <div id="lb"><button class="x" type="button" data-lb="x">✕</button><button class="p" type="button" data-lb="p">‹</button><img id="lbi" alt=""><button class="nx" type="button" data-lb="n">›</button><div class="c" id="lbc"></div></div>
 
 <section class="alt" id="plan"><div class="wrap">
-<div class="sh rv"><small>Business Plan</small><h2>सोना भी <span class="gt">+ कमाई का अवसर भी</span></h2><p>ID फ्री में बनती है। कम से कम 1.5 ग्राम गोल्ड पैकेज लेने पर एक्टिवेशन होता है।</p></div>
+<div class="sh rv"><small>Business Plan</small><h2 data-en="Gold &lt;span class=&quot;gt&quot;&gt;+ an earning opportunity&lt;/span&gt;">सोना भी <span class="gt">+ कमाई का अवसर भी</span></h2><p data-en="ID is free. Activation needs a gold package of at least 1.5 grams.">ID फ्री में बनती है। कम से कम 1.5 ग्राम गोल्ड पैकेज लेने पर एक्टिवेशन होता है।</p></div>
 <div class="g4" id="pkgs"></div>
-<div class="steps rv"><div><b>Package</b><br><span class="note">चुनें</span></div><div><b>Gold / Coupon</b><br><span class="note">पाएं</span></div><div><b>Business Volume</b><br><span class="note">(BV) बनाएं</span></div><div><b>Team</b><br><span class="note">बनाएं</span></div><div><b>Income</b><br><span class="note">कमाएं</span></div></div>
+<div class="steps rv"><div><b>Package</b><br><span class="note" data-en="Choose">चुनें</span></div><div><b>Gold / Coupon</b><br><span class="note" data-en="Get">पाएं</span></div><div><b>Business Volume</b><br><span class="note" data-en="(BV) build">(BV) बनाएं</span></div><div><b>Team</b><br><span class="note" data-en="Build">बनाएं</span></div><div><b>Income</b><br><span class="note" data-en="Earn">कमाएं</span></div></div>
 <div class="g2" style="margin-top:34px" id="incomes"></div>
 <div class="g3" style="margin-top:22px">
-<div class="card feat rv"><div class="ic">✈️</div><h3>Tour का अवसर</h3><p>Target पूरा करें → Domestic / International Tour</p></div>
-<div class="card feat rv"><div class="ic">🏆</div><h3>Stage पर सम्मान</h3><p>हर नए Level पर Achievement Awards</p></div>
-<div class="card feat rv"><div class="ic">⚖️</div><h3>Binary Structure</h3><p>2 लेग · अनलिमिटेड डेप्थ · 3 लेवल इनकम</p></div>
+<div class="card feat rv"><div class="ic">✈️</div><h3 data-en="Tour opportunity">Tour का अवसर</h3><p data-en="Hit targets → Domestic / International tour">Target पूरा करें → Domestic / International Tour</p></div>
+<div class="card feat rv"><div class="ic">🏆</div><h3 data-en="Stage recognition">Stage पर सम्मान</h3><p data-en="Achievement awards at every new level">हर नए Level पर Achievement Awards</p></div>
+<div class="card feat rv"><div class="ic">⚖️</div><h3>Binary Structure</h3><p data-en="2 legs · unlimited depth · 3-level income">2 लेग · अनलिमिटेड डेप्थ · 3 लेवल इनकम</p></div>
 </div>
 </div></section>
 
 <section id="earn"><div class="wrap">
-<div class="sh rv"><small>Income Calculator</small><h2>कितना <span class="gt">पैसा बन सकता है?</span></h2><p>प्लान के प्रतिशत के अनुसार अपना हिसाब खुद लगाइए। शुरुआत में ₹1 लाख की कमाई के लिए <b>सबसे कम बिज़नेस</b> का हिसाब भरा हुआ है।</p></div>
+<div class="sh rv"><small>Income Calculator</small><h2 data-en="How much &lt;span class=&quot;gt&quot;&gt;can you earn?&lt;/span&gt;">कितना <span class="gt">पैसा बन सकता है?</span></h2><p data-en="Work out your own numbers from the plan percentages. It opens with the &lt;b&gt;minimum business&lt;/b&gt; needed to earn ₹1 lakh.">प्लान के प्रतिशत के अनुसार अपना हिसाब खुद लगाइए। शुरुआत में ₹1 लाख की कमाई के लिए <b>सबसे कम बिज़नेस</b> का हिसाब भरा हुआ है।</p></div>
 
 <div class="sol rv" id="solBox">
 <div class="g2" style="align-items:center">
 <div>
-<label style="margin-top:0">🎯 मुझे कितनी कमाई चाहिए (₹)</label>
+<label style="margin-top:0" data-en="🎯 Income I want (₹)">🎯 मुझे कितनी कमाई चाहिए (₹)</label>
 <input id="tgt" type="number" inputmode="numeric" value="100000">
 <input id="tgtR" type="range" min="10000" max="1000000" step="10000" value="100000" style="margin-top:12px">
 <div class="kchips" style="margin-top:10px" id="tgtCh"></div>
 </div>
 <div style="text-align:center">
-<div class="note">सबसे कम ज़रूरी कुल बिज़नेस (BV)</div>
+<div class="note" data-en="Minimum total business needed (BV)">सबसे कम ज़रूरी कुल बिज़नेस (BV)</div>
 <div class="bigbv" id="minBV">—</div>
 <div id="minHow" style="font-size:14px"></div>
-<button class="btn sm" id="useSol" type="button" style="margin-top:10px">⬇ यही हिसाब नीचे भरें</button>
+<button class="btn sm" id="useSol" type="button" style="margin-top:10px" data-en="⬇ Fill this in below">⬇ यही हिसाब नीचे भरें</button>
 </div>
 </div>
-<div class="tbw"><table class="scn"><thead><tr><th>बिज़नेस कहाँ से आए</th><th>इनकम दर</th><th>ज़रूरी BV</th></tr></thead><tbody id="scn"></tbody></table></div>
-<p class="note" style="margin-top:8px">सबसे कम बिज़नेस तब लगता है जब पूरी BV आपके <b>Direct</b> लोगों से, दोनों साइड बराबर आए — क्योंकि उस पर कूपन + लेवल-1 + मैचिंग तीनों इनकम बनती हैं।</p>
+<div class="tbw"><table class="scn"><thead><tr><th data-en="Where the business comes from">बिज़नेस कहाँ से आए</th><th data-en="Income rate">इनकम दर</th><th data-en="BV needed">ज़रूरी BV</th></tr></thead><tbody id="scn"></tbody></table></div>
+<p class="note" style="margin-top:8px" data-en="The least business is needed when all BV comes from your &lt;b&gt;Direct&lt;/b&gt; members, equal on both sides — it earns coupon + level-1 + matching together.">सबसे कम बिज़नेस तब लगता है जब पूरी BV आपके <b>Direct</b> लोगों से, दोनों साइड बराबर आए — क्योंकि उस पर कूपन + लेवल-1 + मैचिंग तीनों इनकम बनती हैं।</p>
 </div>
 
 <div class="calcw" style="margin-top:24px">
 <div class="card rv">
-<div class="tabs" id="mode"><button class="on" data-m="pk" type="button">📦 पैकेज से</button><button data-m="bv" type="button">✍️ सीधे BV से</button></div>
+<div class="tabs" id="mode"><button class="on" data-m="pk" type="button" data-en="📦 By package">📦 पैकेज से</button><button data-m="bv" type="button" data-en="✍️ By BV">✍️ सीधे BV से</button></div>
 <div class="g2" style="gap:14px">
 <div class="leg L" id="legL"></div><div class="leg R" id="legR"></div>
 </div>
-<details style="margin-top:14px"><summary style="cursor:pointer;color:var(--gold)">➕ टीम बिल्डिंग बोनस और कैपिंग (वैकल्पिक)</summary>
-<div class="g2" style="gap:10px"><div><label>Leader L1 का बोनस (₹)</label><input id="tb1" type="number" inputmode="numeric" value="0"></div><div><label>Leader L2 का बोनस (₹)</label><input id="tb2" type="number" inputmode="numeric" value="0"></div><div><label>Leader L3 का बोनस (₹)</label><input id="tb3" type="number" inputmode="numeric" value="0"></div><div><label>मैचिंग कैपिंग सीमा (₹, 0 = नहीं)</label><input id="cap" type="number" inputmode="numeric" value="0"></div></div>
+<details style="margin-top:14px"><summary style="cursor:pointer;color:var(--gold)" data-en="➕ Team building bonus &amp; capping (optional)">➕ टीम बिल्डिंग बोनस और कैपिंग (वैकल्पिक)</summary>
+<div class="g2" style="gap:10px"><div><label data-en="Leader L1 bonus (₹)">Leader L1 का बोनस (₹)</label><input id="tb1" type="number" inputmode="numeric" value="0"></div><div><label data-en="Leader L2 bonus (₹)">Leader L2 का बोनस (₹)</label><input id="tb2" type="number" inputmode="numeric" value="0"></div><div><label data-en="Leader L3 bonus (₹)">Leader L3 का बोनस (₹)</label><input id="tb3" type="number" inputmode="numeric" value="0"></div><div><label data-en="Matching cap (₹, 0 = none)">मैचिंग कैपिंग सीमा (₹, 0 = नहीं)</label><input id="cap" type="number" inputmode="numeric" value="0"></div></div>
 </details>
 </div>
 <div class="card res rv">
-<div class="note" style="text-align:center">आपकी अनुमानित कुल इनकम</div>
+<div class="note" style="text-align:center" data-en="Your estimated total income">आपकी अनुमानित कुल इनकम</div>
 <div class="tot" id="tot">₹0</div>
 <div class="donut"><svg id="dn" width="150" height="150" viewBox="0 0 42 42"></svg><div class="lgd" id="lgd"></div></div>
 <div id="brk"></div>
-<div class="rw"><span>Left / Right कुल BV</span><b id="lrbv">—</b></div>
-<div class="rw"><span>कुल बिज़नेस पर कमाई</span><b id="eff">—</b></div>
-<button class="btn o sm" id="shareCalc" type="button" style="margin-top:10px">📤 यह हिसाब WhatsApp पर भेजें</button>
+<div class="rw"><span data-en="Left / Right total BV">Left / Right कुल BV</span><b id="lrbv">—</b></div>
+<div class="rw"><span data-en="Earning on total business">कुल बिज़नेस पर कमाई</span><b id="eff">—</b></div>
+<button class="btn o sm" id="shareCalc" type="button" style="margin-top:10px" data-en="📤 Send on WhatsApp">📤 यह हिसाब WhatsApp पर भेजें</button>
 </div>
 </div>
-<div class="disc" id="disc">⚠️ यह कैलकुलेटर सिर्फ़ प्लान के प्रतिशत से बना <b>उदाहरण</b> है — कोई गारंटीड इनकम नहीं। कमाई केवल असली बिक्री (BV) पर बनती है, सिर्फ़ किसी को जोड़ने पर नहीं। कूपन रिडीम इनकम कूपन के रूप में मिलती है, नकद नहीं। मैचिंग पर साप्ताहिक कैपिंग लागू है। सभी इनकम, टूर व रिवॉर्ड कंपनी के नियम व शर्तों के अनुसार।</div>
+<div class="disc" id="disc" data-en="⚠️ This calculator is only an <b>example</b> based on the plan percentages — no guaranteed income. Income is earned only on real sales (BV), not just on joining people. Coupon redeem income is paid as coupons, not cash. Weekly capping applies to matching. All income, tours and rewards are subject to company terms &amp; conditions.">⚠️ यह कैलकुलेटर सिर्फ़ प्लान के प्रतिशत से बना <b>उदाहरण</b> है — कोई गारंटीड इनकम नहीं। कमाई केवल असली बिक्री (BV) पर बनती है, सिर्फ़ किसी को जोड़ने पर नहीं। कूपन रिडीम इनकम कूपन के रूप में मिलती है, नकद नहीं। मैचिंग पर साप्ताहिक कैपिंग लागू है। सभी इनकम, टूर व रिवॉर्ड कंपनी के नियम व शर्तों के अनुसार।</div>
 </div></section>
 
 <section class="alt" id="gold"><div class="wrap">
-<div class="sh rv"><small>Price Calculator</small><h2>सोना-चाँदी <span class="gt">कैलकुलेटर</span></h2><p>आज के लाइव रेट से गहने का पूरा दाम — सोने की कीमत, मेकिंग और GST के साथ।</p></div>
+<div class="sh rv"><small>Price Calculator</small><h2 data-en="Gold &amp; Silver &lt;span class=&quot;gt&quot;&gt;Calculator&lt;/span&gt;">सोना-चाँदी <span class="gt">कैलकुलेटर</span></h2><p data-en="Full jewellery price at today&#x27;s live rate — metal value, making and GST.">आज के लाइव रेट से गहने का पूरा दाम — सोने की कीमत, मेकिंग और GST के साथ।</p></div>
 <div class="calcw">
 <div class="card rv">
-<div class="tabs" id="gMet"><button class="on" data-m="g" type="button">🟡 सोना</button><button data-m="s" type="button">⚪ चाँदी</button></div>
-<label style="margin-top:0">शुद्धता</label><div class="kchips" id="gKt"></div>
-<div class="g2" style="gap:12px"><div><label>वज़न (ग्राम)</label><input id="gW" type="number" inputmode="decimal" value="10" step="0.001"></div><div><label id="gRl">24K रेट (₹/ग्राम)</label><input id="gR" type="number" inputmode="decimal"></div></div>
+<div class="tabs" id="gMet"><button class="on" data-m="g" type="button" data-en="🟡 Gold">🟡 सोना</button><button data-m="s" type="button" data-en="⚪ Silver">⚪ चाँदी</button></div>
+<label style="margin-top:0" data-en="Purity">शुद्धता</label><div class="kchips" id="gKt"></div>
+<div class="g2" style="gap:12px"><div><label data-en="Weight (grams)">वज़न (ग्राम)</label><input id="gW" type="number" inputmode="decimal" value="10" step="0.001"></div><div><label id="gRl">24K रेट (₹/ग्राम)</label><input id="gR" type="number" inputmode="decimal"></div></div>
 <input id="gWr" type="range" min="0.5" max="100" step="0.5" value="10" style="margin-top:14px">
-<p class="note" id="gRn">रेट अपने-आप लाइव भरता है; चाहें तो बदल सकते हैं।</p>
+<p class="note" id="gRn" data-en="Rate fills live automatically; you can change it.">रेट अपने-आप लाइव भरता है; चाहें तो बदल सकते हैं।</p>
 </div>
 <div class="card rv">
-<div class="rw"><span>इस शुद्धता का रेट / ग्राम</span><b id="gO0">—</b></div>
+<div class="rw"><span data-en="Rate / gram at this purity">इस शुद्धता का रेट / ग्राम</span><b id="gO0">—</b></div>
 <div class="rw"><span id="gO1l">सोने की कीमत</span><b id="gO1">—</b></div>
-<div class="rw"><span>मेकिंग चार्ज (<span id="gMk">—</span>%)</span><b id="gO2">—</b></div>
+<div class="rw"><span><span data-en="Making charge">मेकिंग चार्ज</span> (<span id="gMk">—</span>%)</span><b id="gO2">—</b></div>
 <div class="rw"><span>GST (<span id="gGs">3</span>%)</span><b id="gO3">—</b></div>
-<div class="rw t"><span>कुल अनुमानित कीमत</span><b id="gO4">—</b></div>
-<p class="note">अंतिम कीमत डिज़ाइन, वज़न और शोरूम में बने बिल के अनुसार होगी।</p>
+<div class="rw t"><span data-en="Estimated total price">कुल अनुमानित कीमत</span><b id="gO4">—</b></div>
+<p class="note" data-en="Final price depends on design, weight and the showroom bill.">अंतिम कीमत डिज़ाइन, वज़न और शोरूम में बने बिल के अनुसार होगी।</p>
 </div>
 </div>
 </div></section>
 
 <section id="video"><div class="wrap">
-<div class="sh rv"><small>Watch</small><h2>SKJ प्लान — <span class="gt">वीडियो में</span></h2></div>
+<div class="sh rv"><small>Watch</small><h2 data-en="SKJ Plan — &lt;span class=&quot;gt&quot;&gt;on video&lt;/span&gt;">SKJ प्लान — <span class="gt">वीडियो में</span></h2></div>
 <div class="vg">
-<div class="vid rv" id="vidBox"><video id="vidEl" controls playsinline preload="metadata" poster="img/video-poster.jpg"><source src="skj-plan.mp4" type="video/mp4"></video></div>
+<div class="vid rv" id="vidBox"><video id="vidEl" controls playsinline preload="metadata" poster="poster.jpg"><source src="skj-plan.mp4" type="video/mp4"></video></div>
 <div class="rv">
-<h3 class="gt" style="font-size:24px">इस वीडियो में</h3>
-<ul class="chk"><li>सोना खरीदने के फ़ायदे</li><li>कैरेट का धोखा और नुकसान का हिसाब</li><li>BIS Hallmark + HUID की गाइडलाइन</li><li>Gold Packages: 1.5g · 3g · 7.5g · 15g</li><li>4 तरह की इनकम और उदाहरण</li><li>Tour और Stage Recognition</li></ul>
-<div class="cta"><a class="btn" href="#earn">💰 अपना हिसाब लगाएँ</a><button class="btn o" id="shareSite" type="button">📤 साइट शेयर करें</button></div>
+<h3 class="gt" style="font-size:24px" data-en="In this video">इस वीडियो में</h3>
+<ul class="chk"><li data-en="Benefits of buying gold">सोना खरीदने के फ़ायदे</li><li data-en="The carat trick and your loss">कैरेट का धोखा और नुकसान का हिसाब</li><li data-en="BIS Hallmark + HUID guideline">BIS Hallmark + HUID की गाइडलाइन</li><li>Gold Packages: 1.5g · 3g · 7.5g · 15g</li><li data-en="4 income types with examples">4 तरह की इनकम और उदाहरण</li><li data-en="Tour and stage recognition">Tour और Stage Recognition</li></ul>
+<div class="cta"><a class="btn" href="#earn" data-en="💰 Calculate yours">💰 अपना हिसाब लगाएँ</a><button class="btn o" id="shareSite" type="button" data-en="📤 Share site">📤 साइट शेयर करें</button></div>
 </div>
 </div>
-<div id="docsW" style="display:none;margin-top:34px"><h3 class="gt" style="font-size:22px">📄 प्लान और डिज़ाइन फ़ाइलें</h3><div class="docs" id="docs"></div></div>
+<div id="docsW" style="display:none;margin-top:34px"><h3 class="gt" style="font-size:22px" data-en="📄 Plan &amp; design files">📄 प्लान और डिज़ाइन फ़ाइलें</h3><div class="docs" id="docs"></div></div>
 </div></section>
 
 <section class="alt" id="contact"><div class="wrap">
-<div class="sh rv"><small>Contact</small><h2 class="gt">हमसे जुड़ें</h2><p>Let's Grow Together</p></div>
+<div class="sh rv"><small>Contact</small><h2 class="gt" data-en="Get in touch">हमसे जुड़ें</h2><p>Let's Grow Together</p></div>
 <div class="g2">
 <div class="card cont rv" id="cont"><div class="rw"><span>कंपनी</span><b>SUVARNA KALA JEWELLERS PVT. LTD.</b></div><div class="rw"><span>GSTIN</span><b>23ABUCS9668J1ZB</b></div><div class="rw"><span>वेबसाइट</span><b>www.skjewellerspvtltd.com</b></div></div>
-<div class="card rv" style="text-align:center"><div class="ic" style="font-size:44px">🏪</div><h3 class="gt" style="font-size:24px">फ्रेंचाइज़ी लेना चाहते हैं?</h3><p class="note">बिना लॉगिन के आवेदन भरें — हमारी टीम संपर्क करके KYC दस्तावेज़ माँगेगी।</p><a class="btn" href="erp.html?apply=1">📨 फ्रेंचाइज़ी आवेदन</a> <a class="btn o" id="waBig" href="#" style="display:none">💬 WhatsApp</a></div>
+<div class="card rv" style="text-align:center"><div class="ic" style="font-size:44px">🏪</div><h3 class="gt" style="font-size:24px" data-en="Want a franchise?">फ्रेंचाइज़ी लेना चाहते हैं?</h3><p class="note" data-en="Apply without login — our team will contact you for KYC documents.">बिना लॉगिन के आवेदन भरें — हमारी टीम संपर्क करके KYC दस्तावेज़ माँगेगी।</p><a class="btn" href="erp.html?apply=1" data-en="📨 Franchise application">📨 फ्रेंचाइज़ी आवेदन</a> <a class="btn o" id="waBig" href="#" style="display:none">💬 WhatsApp</a></div>
 </div>
 </div></section>
 
-<footer><div class="wrap"><img src="img/logo.png" alt="" style="height:54px;margin:0 auto 10px;width:auto"><div>© <span id="yr"></span> Suvarna Kala Jewellers Pvt. Ltd. · Trust | Quality | Prosperity</div><div style="margin-top:6px"><a href="#" id="footLogin">स्टाफ / फ्रेंचाइज़ी लॉगिन</a></div></div></footer>
+<footer><div class="wrap"><img src="logo.png" alt="" style="height:54px;margin:0 auto 10px;width:auto"><div>© <span id="yr"></span> Suvarna Kala Jewellers Pvt. Ltd. · Trust | Quality | Prosperity</div><div style="margin-top:6px"><a href="#" id="footLogin" data-en="Staff / Franchise login">स्टाफ / फ्रेंचाइज़ी लॉगिन</a></div></div></footer>
 
 <div class="fab"><a class="wa" id="waFab" href="#" target="_blank" rel="noopener" style="display:none" aria-label="WhatsApp">💬</a><button class="up" id="upFab" type="button" aria-label="ऊपर">↑</button></div>
-<div class="ov" id="ovLogin"><div class="card lgo"><div style="display:flex;justify-content:space-between;align-items:center"><h3 class="gt" style="font-size:22px;margin:0">🔐 लॉगिन</h3><button class="btn o sm" data-close type="button">✕</button></div>
-<a href="erp.html"><span class="i">🏭</span><span><b>ERP — स्टॉक · GST बिल · फ्रेंचाइज़ी</b><span class="note">Admin, स्टाफ और फ्रेंचाइज़ी के लिए</span></span></a>
-<a href="admin.html"><span class="i">⚙️</span><span><b>वेबसाइट पैनल — सेटिंग · लोगो · स्टाफ · सील</b><span class="note">सिर्फ़ Admin के लिए</span></span></a>
-<p class="note">ग्राहकों के लिए लॉगिन की ज़रूरत नहीं।</p></div></div>
+<div class="ov" id="ovLogin"><div class="card lgo"><div style="display:flex;justify-content:space-between;align-items:center"><h3 class="gt" style="font-size:22px;margin:0" data-en="🔐 Login">🔐 लॉगिन</h3><button class="btn o sm" data-close type="button">✕</button></div>
+<a href="erp.html"><span class="i">🏭</span><span><b data-en="ERP — Stock · GST Bills · Franchise">ERP — स्टॉक · GST बिल · फ्रेंचाइज़ी</b><span class="note" data-en="For Admin, staff and franchise">Admin, स्टाफ और फ्रेंचाइज़ी के लिए</span></span></a>
+<a href="admin.html"><span class="i">⚙️</span><span><b data-en="Website panel — Settings · Logo · Staff · Seal">वेबसाइट पैनल — सेटिंग · लोगो · स्टाफ · सील</b><span class="note" data-en="Admin only">सिर्फ़ Admin के लिए</span></span></a>
+<p class="note" data-en="Customers do not need to log in.">ग्राहकों के लिए लॉगिन की ज़रूरत नहीं।</p></div></div>
 <div class="ov" id="ovV"><div class="card" id="vCard" style="text-align:center"></div></div>
 
 <script src="firebase-config.js"></script>
@@ -349,9 +371,28 @@ footer{border-top:1px solid var(--line);padding:30px 0 calc(90px + env(safe-area
 var $=function(i){return document.getElementById(i)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function N(n){return +n||0}
+var LANG="hi";try{LANG=localStorage.getItem("skj_lang")||"hi"}catch(e){}
+var D={"सोना 24K":"Gold 24K","⚪ चाँदी":"⚪ Silver","/किलो":"/kg","BIS HUID हॉलमार्क गोल्ड":"BIS HUID hallmark gold","₹5 लाख तक Accidental Insurance*":"Accidental Insurance up to ₹5 lakh*",
+"<small> ग्राम</small>":"<small> grams</small>","हर Direct के BV पर — कूपन के रूप में":"On each Direct's BV — paid as coupon","3 लेवल तक — ":"Up to 3 levels — ","₹1,00,000 BV पर कुल ":"Total on ₹1,00,000 BV: ",
+"Left-Right के मैच हुए BV पर (साप्ताहिक कैपिंग)":"On matched Left-Right BV (weekly capping)","BV पर नहीं — टीम के Leader के बोनस पर":"Not on BV — on your team leaders' bonus","Leader बोनस ₹10,000 × ":"Leader bonus ₹10,000 × ","इनकम ":"Income ",
+"⬅ LEFT टीम":"⬅ LEFT team","RIGHT टीम ➡":"RIGHT team ➡","मेरे Direct लोग — किस पैकेज के कितने":"My Direct members — how many per package","g पैकेज (BV ":"g package (BV ","Direct (Level 1) का BV (₹)":"Direct (Level 1) BV (₹)",
+"Level 2 का BV":"Level 2 BV","Level 3 का BV":"Level 3 BV","Level 3 के नीचे की टीम का BV (सिर्फ़ मैचिंग में)":"Team BV below Level 3 (matching only)","कुल ":"Total ",
+"कूपन रिडीम (":"Coupon redeem (","लेवल इनकम":"Level income","मैचिंग (":"Matching (","मैच BV ":"Matched BV ","टीम बिल्डिंग बोनस":"Team building bonus","Leader बोनस पर":"On leader bonus",
+"हर साइड ":"Each side ","का Direct बिज़नेस":"of Direct business","पैकेज में: ":"In packages: ","इससे बनेगी ≈ ":"This earns ≈ ",
+"सब Direct, दोनों साइड बराबर":"All Direct, both sides equal","सब Direct, सिर्फ़ एक साइड":"All Direct, one side only","सब Level-2 पर, दोनों साइड बराबर":"All at Level-2, both sides equal","सब Level-3 पर, दोनों साइड बराबर":"All at Level-3, both sides equal","Level-3 से नीचे की टीम (सिर्फ़ मैचिंग)":"Team below Level-3 (matching only)","Level-3 से नीचे की टीम":"Team below Level-3",
+"24K रेट (₹/ग्राम)":"24K rate (₹/gram)","चाँदी 999 रेट (₹/ग्राम)":"Silver 999 rate (₹/gram)","सोने की कीमत":"Gold value","चाँदी की कीमत":"Silver value","% नुकसान":"% loss","तय रेट":"fixed rate",
+"कंपनी":"Company","फोन":"Phone","वेबसाइट":"Website","बंद करें":"Close","⏳ जाँच हो रही है…":"⏳ Checking…","❌ गलत कोड":"❌ Wrong code","यह सत्यापन कोड सही नहीं है।":"This verification code is not valid.",
+"❌ बिल नहीं मिला":"❌ Bill not found","इस कोड का कोई बिल हमारे रिकॉर्ड में नहीं है। यह नकली हो सकता है।":"No bill with this code in our records. It may be fake.","✅ असली बिल":"✅ Genuine bill","जारी करने वाला: ":"Issued by: ",
+"बिल नं.":"Bill no.","तारीख":"Date","ग्राहक":"Customer","आइटम":"Items","कुल रकम":"Total amount","ऊपर की रकम अपने छपे बिल से मिलाएँ।":"Match this amount with your printed bill.","⚠️ जाँच नहीं हो पाई":"⚠️ Could not check","इंटरनेट जाँचकर दोबारा कोशिश करें।":"Check internet and try again.",
+"⏳ फ़ाइल खुल रही है…":"⏳ Opening file…","फ़ाइल नहीं खुल पाई":"Could not open file","⬇ खोलें":"⬇ Open","टीम बोनस":"Team bonus","कूपन":"Coupon","लेवल":"Level","मैचिंग":"Matching"," लाख":" lakh"," करोड़":" crore"};
+var DK=Object.keys(D).sort(function(a,b){return b.length-a.length});
+function tr(h){if(LANG!="en")return h;h=String(h);DK.forEach(function(k){if(h.indexOf(k)>=0)h=h.split(k).join(D[k])});return h}
+function trEl(){if(LANG!="en")return;for(var i=0;i<arguments.length;i++){var e=document.getElementById(arguments[i]);if(e)e.innerHTML=tr(e.innerHTML)}}
+var CATEN={"सभी":"All","लंबे हार":"Long Necklace","नेकलेस सेट":"Necklace Set","मंगलसूत्र":"Mangalsutra","टॉप्स / लॉकेट":"Tops / Pendants","बाली / झुमके":"Earrings / Jhumka","माँग टीका":"Maang Tikka","चेन":"Chain","कंगन":"Bangles","अंगूठी":"Rings","ब्रेसलेट":"Bracelet","EV स्कूटर":"EV Scooter","टेस्ट रिपोर्ट":"Test Report"};
+function cN(c){return LANG=="en"&&CATEN[c]?CATEN[c]:c}
 function inr(n,d){return"₹"+(+n||0).toLocaleString("en-IN",{maximumFractionDigits:d==null?0:d})}
-function lakh(n){n=+n||0;if(n>=1e7)return"₹"+(n/1e7).toLocaleString("en-IN",{maximumFractionDigits:2})+" करोड़";if(n>=1e5)return"₹"+(n/1e5).toLocaleString("en-IN",{maximumFractionDigits:2})+" लाख";return inr(n)}
-function toast(m){var t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},2600)}
+function lakh(n){n=+n||0;if(n>=1e7)return"₹"+(n/1e7).toLocaleString("en-IN",{maximumFractionDigits:2})+tr(" करोड़");if(n>=1e5)return"₹"+(n/1e5).toLocaleString("en-IN",{maximumFractionDigits:2})+tr(" लाख");return inr(n)}
+function toast(m){var t=document.createElement("div");t.className="toast";t.textContent=tr(m);document.body.appendChild(t);setTimeout(function(){t.remove()},2600)}
 $("yr").textContent=new Date().getFullYear();
 
 /* ---------- settings (Admin ERP से public/site में बदलती हैं) ---------- */
@@ -375,10 +416,10 @@ function reveal(r){$$(".rv",r).forEach(function(el){if(io)io.observe(el);else el
 var secs=$$("section[id]"),navA=$$("#nav a");
 addEventListener("scroll",function(){var y=scrollY+140,cur="";secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});navA.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")=="#"+cur)})},{passive:true});
 /* counters */
-function countUp(el){var to=+el.getAttribute("data-cnt"),p=el.getAttribute("data-p")||"",s=el.getAttribute("data-s")||"",t0=null;function st(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1400),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=p+v+s;if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)}
+function countUp(el){var to=+el.getAttribute("data-cnt"),p=el.getAttribute("data-p")||"",s=(LANG=="en"&&el.hasAttribute("data-se")?el.getAttribute("data-se"):el.getAttribute("data-s"))||"",t0=null;function st(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1400),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=p+v+s;if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)}
 setTimeout(function(){$$("[data-cnt]").forEach(countUp)},500);
 /* typewriter */
-(function(){var W=["भरोसा","शुद्धता","अवसर","सुनहरा भविष्य"],i=0,j=0,del=false,el=$("tw");function step(){var w=W[i];el.textContent=w.slice(0,j);if(!del&&j<w.length)j++;else if(!del){del=true;setTimeout(step,1600);return}else if(j>0)j--;else{del=false;i=(i+1)%W.length}setTimeout(step,del?60:120)}step()})();
+(function(){var W0=["भरोसा","शुद्धता","अवसर","सुनहरा भविष्य"],W1=["Trust","Purity","Opportunity","Golden Future"],i=0,j=0,del=false,el=$("tw");function step(){var W=LANG=="en"?W1:W0,w=W[i%W.length];el.textContent=w.slice(0,j);if(!del&&j<w.length)j++;else if(!del){del=true;setTimeout(step,1600);return}else if(j>0)j--;else{del=false;i=(i+1)%W.length}setTimeout(step,del?60:120)}step()})();
 /* gold dust */
 (function(){var c=$("dust"),x=c.getContext("2d"),ps=[],W,H,dpr=Math.min(2,devicePixelRatio||1);if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 function rs(){W=c.width=c.offsetWidth*dpr;H=c.height=c.offsetHeight*dpr}rs();addEventListener("resize",rs);
@@ -400,9 +441,9 @@ function ag(){if(LV.is>0)return LV.is*(1+N(RC.sduty)/100)+N(RC.soff)/(RC.soffu==
 function saveLV(){try{localStorage.setItem("skj_lv2",JSON.stringify({LV:LV,RC:RC}))}catch(e){}}
 function drawRates(){var g=g24(),s=ag(),pu=SITE.gold.pu;
 $("r24").textContent=g?inr(g):"—";$("r22").textContent=g?inr(g*N(pu["22"])/100):"—";$("r18").textContent=g?inr(g*N(pu["18"])/100):"—";$("rag").textContent=s?inr(s*1000):"—";$("r10").textContent=g?inr(g*10):"—";
-$("rtTime").textContent=LV.ts?("🟢 "+new Date(LV.ts).toLocaleTimeString("hi-IN",{hour:"2-digit",minute:"2-digit"})):(RC.man?"🟠 तय रेट":"");
+$("rtTime").textContent=LV.ts?("🟢 "+new Date(LV.ts).toLocaleTimeString("hi-IN",{hour:"2-digit",minute:"2-digit"})):(RC.man?"🟠 "+tr("तय रेट"):"");
 var parts=['<span>📈 सोना 24K <b>'+(g?inr(g):"—")+'</b>/g</span>','<span>22K <b>'+(g?inr(g*N(pu["22"])/100):"—")+'</b>/g</span>','<span>18K <b>'+(g?inr(g*N(pu["18"])/100):"—")+'</b>/g</span>','<span>⚪ चाँदी <b>'+(s?inr(s*1000):"—")+'</b>/किलो</span>','<span>🏅 BIS HUID हॉलमार्क गोल्ड</span>','<span>🎟️ 50% Gold Coupon</span>','<span>🛡️ ₹5 लाख तक Accidental Insurance*</span>'];
-if(SITE.notice)parts.unshift('<span>📢 <b>'+esc(SITE.notice)+'</b></span>');$("tick").innerHTML=parts.join("");
+if(SITE.notice)parts.unshift('<span>📢 <b>'+esc(SITE.notice)+'</b></span>');$("tick").innerHTML=tr(parts.join(""));
 if(gAuto)gFill()}
 function liveRefresh(){fetchIntl().then(function(v){if(v.g>0)LV.ig=v.g;if(v.s>0)LV.is=v.s;if(v.g>0||v.s>0)LV.ts=Date.now();saveLV();drawRates()})}
 
@@ -410,19 +451,19 @@ function liveRefresh(){fetchIntl().then(function(v){if(v.g>0)LV.ig=v.g;if(v.s>0)
 var KT=[["14K",58.5],["16K",66.7],["18K",75],["20K",83.3],["22K",91.6]],kSel=0;
 $("kch").innerHTML=KT.map(function(k,i){return'<button type="button" data-k="'+i+'" class="'+(i==kSel?"on":"")+'">'+k[0]+'</button>'}).join("");
 $("kch").onclick=function(e){var b=e.target.closest("button");if(!b)return;kSel=+b.getAttribute("data-k");$$("#kch button").forEach(function(x){x.classList.toggle("on",x===b)});kCalc()};
-function kCalc(){var a=N($("kAmt").value),p=KT[kSel][1],got=a*p/100;$("kFill").style.width=p+"%";$("kGot").textContent=inr(got);$("kLoss").textContent="≈ "+inr(a-got)+" ("+Math.round(100-p)+"%)";$("kLossP").textContent=Math.round(100-p)+"% नुकसान"}
+function kCalc(){var a=N($("kAmt").value),p=KT[kSel][1],got=a*p/100;$("kFill").style.width=p+"%";$("kGot").textContent=inr(got);$("kLoss").textContent="≈ "+inr(a-got)+" ("+Math.round(100-p)+"%)";$("kLossP").textContent=Math.round(100-p)+tr("% नुकसान")}
 $("kAmt").oninput=kCalc;kCalc();
 
 /* ---------- gallery ---------- */
 var CAT=[["लंबे हार","c01.jpg",860,1203],["लंबे हार","c02.jpg",860,1204],["नेकलेस सेट","c03.jpg",860,1203],["लंबे हार","c04.jpg",860,1262],["नेकलेस सेट","c05.jpg",860,1300],["नेकलेस सेट","c06.jpg",811,1300],["नेकलेस सेट","c07.jpg",860,1203],["नेकलेस सेट","c08.jpg",860,1204],["मंगलसूत्र","c09.jpg",860,1204],["नेकलेस सेट","c10.jpg",860,1203],["नेकलेस सेट","c11.jpg",860,1203],["नेकलेस सेट","c12.jpg",860,1278],["टॉप्स / लॉकेट","c13.jpg",860,1189],["टॉप्स / लॉकेट","c14.jpg",860,1203],["टॉप्स / लॉकेट","c15.jpg",860,1203],["टॉप्स / लॉकेट","c16.jpg",860,1204],["टॉप्स / लॉकेट","c17.jpg",860,1205],["चेन","c18.jpg",860,1204],["बाली / झुमके","c19.jpg",860,1204],["बाली / झुमके","c20.jpg",860,1205],["बाली / झुमके","c21.jpg",860,1204],["बाली / झुमके","c22.jpg",860,1204],["टॉप्स / लॉकेट","c23.jpg",860,1291],["टॉप्स / लॉकेट","c24.jpg",860,1203],["माँग टीका","c25.jpg",860,1263],["बाली / झुमके","c26.jpg",860,1203],["कंगन","c27.jpg",860,1203],["अंगूठी","c28.jpg",860,1204],["अंगूठी","c29.jpg",860,1204],["अंगूठी","c30.jpg",860,1275],["कंगन","c31.jpg",860,1204],["कंगन","c32.jpg",860,1204],["कंगन","c33.jpg",860,1205],["चेन","c34.jpg",860,1204],["चेन","c35.jpg",860,1203],["चेन","c36.jpg",860,1204],["चेन","c37.jpg",860,1204],["ब्रेसलेट","c38.jpg",860,1204],["टॉप्स / लॉकेट","c39.jpg",860,1147],["नेकलेस सेट","c40.jpg",900,935],["कंगन","c41.jpg",900,985],["अंगूठी","c42.jpg",800,1422],["बाली / झुमके","c43.jpg",1000,914],["बाली / झुमके","c44.jpg",1000,914],["बाली / झुमके","c45.jpg",860,1137],["बाली / झुमके","c46.jpg",1000,914],["टॉप्स / लॉकेट","c47.jpg",1000,864],["EV स्कूटर","c48.jpg",1024,1536],["EV स्कूटर","c49.jpg",1200,638],["टेस्ट रिपोर्ट","c50.jpg",1100,508]],cf="सभी",vis=[],lbI=0;
 var CATS=["सभी"].concat(CAT.map(function(c){return c[0]}).filter(function(v,i,a){return a.indexOf(v)==i}));
-function gChips(){$("chips").innerHTML=CATS.map(function(c){return'<button type="button" class="'+(c==cf?"on":"")+'" data-c="'+esc(c)+'">'+esc(c)+'</button>'}).join("")}
+function gChips(){$("chips").innerHTML=CATS.map(function(c){return'<button type="button" class="'+(c==cf?"on":"")+'" data-c="'+esc(c)+'">'+esc(cN(c))+'</button>'}).join("")}
 var gio=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var im=e.target;im.src=im.getAttribute("data-src");gio.unobserve(im)}})},{rootMargin:"400px"}):null;
-function gDraw(){vis=[];$("gal").innerHTML=CAT.map(function(x,k){if(cf!="सभी"&&x[0]!=cf)return"";vis.push(k);return'<figure data-k="'+k+'"><img data-src="img/cat/'+x[1]+'" width="'+x[2]+'" height="'+x[3]+'" alt="'+esc(x[0])+'" decoding="async"><figcaption>'+esc(x[0])+'</figcaption></figure>'}).join("");
+function gDraw(){vis=[];$("gal").innerHTML=CAT.map(function(x,k){if(cf!="सभी"&&x[0]!=cf)return"";vis.push(k);return'<figure data-k="'+k+'"><img data-src="'+x[1]+'" width="'+x[2]+'" height="'+x[3]+'" alt="'+esc(x[0])+'" decoding="async"><figcaption>'+esc(cN(x[0]))+'</figcaption></figure>'}).join("");
 $$("#gal img").forEach(function(im){im.onload=function(){im.classList.add("ld")};if(gio)gio.observe(im);else im.src=im.getAttribute("data-src")})}
 $("chips").onclick=function(e){var b=e.target.closest("button");if(!b)return;cf=b.getAttribute("data-c");gChips();gDraw()};
 $("gal").onclick=function(e){var f=e.target.closest("figure");if(!f)return;lbShow(vis.indexOf(+f.getAttribute("data-k")));$("lb").classList.add("on")};
-function lbShow(i){lbI=(i+vis.length)%vis.length;var x=CAT[vis[lbI]];$("lbi").src="img/cat/"+x[1];$("lbc").textContent=x[0]+" · "+(lbI+1)+"/"+vis.length}
+function lbShow(i){lbI=(i+vis.length)%vis.length;var x=CAT[vis[lbI]];$("lbi").src=""+x[1];$("lbc").textContent=cN(x[0])+" · "+(lbI+1)+"/"+vis.length}
 $("lb").onclick=function(e){var a=e.target.getAttribute("data-lb");if(a=="p")lbShow(lbI-1);else if(a=="n")lbShow(lbI+1);else if(a=="x"||e.target.id=="lb")$("lb").classList.remove("on")};
 document.addEventListener("keydown",function(e){if(!$("lb").classList.contains("on"))return;if(e.key=="ArrowLeft")lbShow(lbI-1);if(e.key=="ArrowRight")lbShow(lbI+1);if(e.key=="Escape")$("lb").classList.remove("on")});
 (function(){var sx=0;$("lb").addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});$("lb").addEventListener("touchend",function(e){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)lbShow(lbI+(d<0?1:-1))})})();
@@ -444,7 +485,7 @@ function dirBV(s){return MODE=="pk"?pkBV(s):N(LEG[s].d)}
 function legHTML(s){var p=P().pk,L=LEG[s],nm=s=="L"?"⬅ LEFT टीम":"RIGHT टीम ➡";
 var top=MODE=="pk"?'<label>मेरे Direct लोग — किस पैकेज के कितने</label><div class="pkr">'+p.map(function(k,i){return'<div><label>'+k[0]+'g पैकेज (BV '+(N(k[1])/1000)+'K)</label><div class="stp"><button type="button" data-st="'+s+'" data-i="'+i+'" data-d="-1">−</button><input type="number" min="0" inputmode="numeric" data-n="'+s+'" data-i="'+i+'" value="'+L.n[i]+'"><button type="button" data-st="'+s+'" data-i="'+i+'" data-d="1">+</button></div></div>'}).join("")+'</div>':'<label>Direct (Level 1) का BV (₹)</label><input type="number" inputmode="numeric" data-f="d" data-s="'+s+'" value="'+L.d+'">';
 return'<h4><span>'+nm+'</span><span class="note" data-lt="'+s+'"></span></h4>'+top+'<div class="g2" style="gap:8px;grid-template-columns:1fr 1fr"><div><label>Level 2 का BV</label><input type="number" inputmode="numeric" data-f="l2" data-s="'+s+'" value="'+L.l2+'"></div><div><label>Level 3 का BV</label><input type="number" inputmode="numeric" data-f="l3" data-s="'+s+'" value="'+L.l3+'"></div></div><label>Level 3 के नीचे की टीम का BV (सिर्फ़ मैचिंग में)</label><input type="number" inputmode="numeric" data-f="dp" data-s="'+s+'" value="'+L.dp+'">'}
-function drawLegs(){$("legL").innerHTML=legHTML("L");$("legR").innerHTML=legHTML("R");calc()}
+function drawLegs(){$("legL").innerHTML=tr(legHTML("L"));$("legR").innerHTML=tr(legHTML("R"));calc()}
 document.addEventListener("click",function(e){var b=e.target.closest("[data-st]");if(!b)return;var s=b.getAttribute("data-st"),i=+b.getAttribute("data-i");LEG[s].n[i]=Math.max(0,N(LEG[s].n[i])+ +b.getAttribute("data-d"));var inp=document.querySelector('[data-n="'+s+'"][data-i="'+i+'"]');if(inp)inp.value=LEG[s].n[i];calc()});
 document.addEventListener("input",function(e){var t=e.target;if(t.hasAttribute("data-n")){LEG[t.getAttribute("data-n")].n[+t.getAttribute("data-i")]=Math.max(0,Math.floor(N(t.value)));calc()}else if(t.hasAttribute("data-f")){LEG[t.getAttribute("data-s")][t.getAttribute("data-f")]=Math.max(0,N(t.value));calc()}});
 $("mode").onclick=function(e){var b=e.target.closest("button");if(!b)return;var m=b.getAttribute("data-m");if(m==MODE)return;
@@ -456,17 +497,17 @@ var t=p.tb1/100*tb[0]+p.tb2/100*tb[1]+p.tb3/100*tb[2];return{c:c,lv:lv,m:m,t:t,t
 var COL=["#e8bd52","#7fb2ff","#ff86c0","#5fd08a"],lastT=0;
 function calc(){var dL=dirBV("L"),dR=dirBV("R"),L2=N(LEG.L.l2)+N(LEG.R.l2),L3=N(LEG.L.l3)+N(LEG.R.l3),lgL=dL+N(LEG.L.l2)+N(LEG.L.l3)+N(LEG.L.dp),lgR=dR+N(LEG.R.l2)+N(LEG.R.l3)+N(LEG.R.dp);
 var r=income(dL,dR,L2,L3,lgL,lgR,[N($("tb1").value),N($("tb2").value),N($("tb3").value)],N($("cap").value)),p=P();
-$$("[data-lt]").forEach(function(x){var s=x.getAttribute("data-lt");x.textContent="कुल "+lakh(s=="L"?lgL:lgR)});
+$$("[data-lt]").forEach(function(x){var s=x.getAttribute("data-lt");x.textContent=tr("कुल ")+lakh(s=="L"?lgL:lgR)});
 var rows=[["कूपन रिडीम ("+p.coupon+"%) 🎟️",r.c,"Direct BV "+lakh(p.couponBase=="total"?r.bv:dL+dR)],["लेवल इनकम",r.lv,"L1 "+p.l1+"% · L2 "+p.l2+"% · L3 "+p.l3+"%"],["मैचिंग ("+p.match+"%)",r.m,"मैच BV "+lakh(Math.min(lgL,lgR))],["टीम बिल्डिंग बोनस",r.t,"Leader बोनस पर"]];
-$("brk").innerHTML=rows.map(function(x,i){return'<div class="rw"><span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:'+COL[i]+';margin-right:6px"></i>'+x[0]+'<br><span class="note">'+x[2]+'</span></span><b>'+inr(x[1])+'</b></div>'}).join("");
+$("brk").innerHTML=rows.map(function(x,i){return'<div class="rw"><span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:'+COL[i]+';margin-right:6px"></i>'+x[0]+'<br><span class="note">'+x[2]+'</span></span><b>'+inr(x[1])+'</b></div>'}).join("");trEl("brk");
 $("lrbv").textContent=lakh(lgL)+" / "+lakh(lgR);$("eff").textContent=r.bv?((r.tot/r.bv*100).toFixed(2)+"%"):"—";
 animT(r.tot);donut(rows.map(function(x){return x[1]}));CUR=r}
 var CUR=null;
 function animT(to){var from=lastT,t0=null;lastT=to;function st(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/600),v=from+(to-from)*(1-Math.pow(1-k,3));$("tot").textContent=inr(v);if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)}
 function donut(v){var s=v.reduce(function(a,b){return a+b},0),o=25,h='<circle cx="21" cy="21" r="15.9" fill="none" stroke="#2a2010" stroke-width="5"/>';
 if(s>0)v.forEach(function(x,i){if(x<=0)return;var pc=x/s*100;h+='<circle cx="21" cy="21" r="15.9" fill="none" stroke="'+COL[i]+'" stroke-width="5" stroke-dasharray="'+pc+' '+(100-pc)+'" stroke-dashoffset="'+o+'" style="transition:all .6s"/>';o-=pc});
-h+='<text x="21" y="23" text-anchor="middle" font-size="5" fill="#fff0b8" font-family="Poppins" font-weight="700">'+(s?Math.round(v[2]/s*100)+"%":"")+'</text>';$("dn").innerHTML=h;
-$("lgd").innerHTML=["कूपन","लेवल","मैचिंग","टीम बोनस"].map(function(n,i){return'<div><i style="background:'+COL[i]+'"></i>'+n+' '+(s?Math.round(v[i]/s*100)+"%":"")+'</div>'}).join("")}
+h+='<text x="21" y="23" text-anchor="middle" font-size="5" fill="currentColor" style="color:var(--gold3)" font-family="Poppins" font-weight="700">'+(s?Math.round(v[2]/s*100)+"%":"")+'</text>';$("dn").innerHTML=h;
+$("lgd").innerHTML=["कूपन","लेवल","मैचिंग","टीम बोनस"].map(function(n,i){return'<div><i style="background:'+COL[i]+'"></i>'+tr(n)+' '+(s?Math.round(v[i]/s*100)+"%":"")+'</div>'}).join("")}
 
 /* target solver — कम से कम बिज़नेस */
 function packFor(bv){var p=P().pk.slice().map(function(k,i){return{g:k[0],v:N(k[1]),i:i}}).filter(function(k){return k.v>0}).sort(function(a,b){return b.v-a.v}),n=[0,0,0,0],rem=bv;
@@ -478,11 +519,11 @@ var need=rB>0?T/rB:0,side=need/2,n=packFor(side),pk=p.pk,sideBV=0;n.forEach(func
 var r=income(sideBV,sideBV,0,0,sideBV,sideBV,[0,0,0],0),cnt=n.reduce(function(a,b){return a+b},0);
 $("minBV").textContent=lakh(need);
 $("minHow").innerHTML='हर साइड <b>'+lakh(side)+'</b> का Direct बिज़नेस<br><span class="note">पैकेज में: हर साइड '+n.map(function(c,i){return c?c+" × "+pk[i][0]+"g":""}).filter(Boolean).reverse().join(" + ")+' = '+cnt+' Direct ('+lakh(sideBV)+')<br>इससे बनेगी ≈ <b style="color:var(--gold)">'+inr(r.tot)+'</b></span>';
-SOL={n:n};
+trEl("minHow");SOL={n:n};
 var sc=[["सब Direct, दोनों साइड बराबर",(p.coupon+p.l1)+p.match/2],["सब Direct, सिर्फ़ एक साइड",(p.coupon+p.l1)],["सब Level-2 पर, दोनों साइड बराबर",p.l2+p.match/2],["सब Level-3 पर, दोनों साइड बराबर",p.l3+p.match/2],["Level-3 से नीचे की टीम (सिर्फ़ मैचिंग)",p.match/2]];
 if(p.couponBase=="total"){sc=[["सब Direct, दोनों साइड बराबर",p.coupon+p.l1+p.match/2],["सब Direct, सिर्फ़ एक साइड",p.coupon+p.l1],["सब Level-2 पर, दोनों साइड बराबर",p.coupon+p.l2+p.match/2],["सब Level-3 पर, दोनों साइड बराबर",p.coupon+p.l3+p.match/2],["Level-3 से नीचे की टीम",p.coupon+p.match/2]]}
 var best=Math.max.apply(null,sc.map(function(x){return x[1]}));
-$("scn").innerHTML=sc.map(function(x){return'<tr class="'+(x[1]==best?"best":"")+'"><td>'+x[0]+(x[1]==best?" ⭐":"")+'</td><td>'+(+x[1].toFixed(2))+'%</td><td><b>'+(x[1]>0?lakh(T/(x[1]/100)):"—")+'</b></td></tr>'}).join("")}
+$("scn").innerHTML=sc.map(function(x){return'<tr class="'+(x[1]==best?"best":"")+'"><td>'+x[0]+(x[1]==best?" ⭐":"")+'</td><td>'+(+x[1].toFixed(2))+'%</td><td><b>'+(x[1]>0?lakh(T/(x[1]/100)):"—")+'</b></td></tr>'}).join("");trEl("scn")}
 var SOL=null;
 function applySol(){if(!SOL)return;if(MODE!="pk"){MODE="pk";$$("#mode button").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-m")=="pk")})}["L","R"].forEach(function(s){LEG[s]={n:SOL.n.slice(),d:0,l2:0,l3:0,dp:0}});drawLegs()}
 $("tgt").oninput=solve;$("tgtR").oninput=function(){$("tgt").value=this.value;solve()};
@@ -497,10 +538,10 @@ function gKts(){var o=gMet=="g"?Object.keys(SITE.gold.pu).sort(function(a,b){ret
 $("gKt").innerHTML=o.map(function(x){return'<button type="button" class="'+(x[0]==gKt?"on":"")+'" data-k="'+x[0]+'">'+x[1]+'</button>'}).join("")}
 $("gKt").onclick=function(e){var b=e.target.closest("button");if(!b)return;gKt=b.getAttribute("data-k");gKts();gCalc()};
 $("gMet").onclick=function(e){var b=e.target.closest("button");if(!b)return;gMet=b.getAttribute("data-m");$$("#gMet button").forEach(function(x){x.classList.toggle("on",x===b)});gKt=gMet=="g"?"22":"925";gKts();gAuto=true;gFill()};
-function gFill(){var v=gMet=="g"?g24():ag();$("gR").value=v?Math.round(v*100)/100:"";$("gRl").textContent=gMet=="g"?"24K रेट (₹/ग्राम)":"चाँदी 999 रेट (₹/ग्राम)";gCalc()}
+function gFill(){var v=gMet=="g"?g24():ag();$("gR").value=v?Math.round(v*100)/100:"";$("gRl").textContent=tr(gMet=="g"?"24K रेट (₹/ग्राम)":"चाँदी 999 रेट (₹/ग्राम)");gCalc()}
 $("gR").oninput=function(){gAuto=false;gCalc()};$("gW").oninput=function(){$("gWr").value=this.value;gCalc()};$("gWr").oninput=function(){$("gW").value=this.value;gCalc()};
 function gCalc(){var G=SITE.gold,w=N($("gW").value),base=N($("gR").value),pu=gMet=="g"?N(G.pu[gKt]):N(G.spu[gKt])/99.9*100,r=base*pu/100,g=w*r,mk=gMet=="g"?N(G.mk):N(G.smk),m=g*mk/100,gs=(g+m)*N(G.gst)/100;
-$("gO0").textContent=inr(r,2);$("gO1").textContent=inr(g);$("gO1l").textContent=gMet=="g"?"सोने की कीमत":"चाँदी की कीमत";$("gMk").textContent=mk;$("gO2").textContent=inr(m);$("gGs").textContent=G.gst;$("gO3").textContent=inr(gs);$("gO4").textContent=inr(g+m+gs)}
+$("gO0").textContent=inr(r,2);$("gO1").textContent=inr(g);$("gO1l").textContent=tr(gMet=="g"?"सोने की कीमत":"चाँदी की कीमत");$("gMk").textContent=mk;$("gO2").textContent=inr(m);$("gGs").textContent=G.gst;$("gO3").textContent=inr(gs);$("gO4").textContent=inr(g+m+gs)}
 
 /* ---------- video ---------- */
 function drawVideo(){var u=String(SITE.video||"").trim();if(!u)return;var y=/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/.exec(u);
@@ -512,10 +553,10 @@ $("shareSite").onclick=function(){var u=location.origin+location.pathname,t="स
 function linkify(v){var t=String(v).trim(),s=esc(t);if(/^\+?[\d\s-]{10,15}$/.test(t))return'<a href="tel:'+t.replace(/[^\d+]/g,"")+'">'+s+'</a>';if(/^https?:\/\//.test(t))return'<a href="'+s+'" target="_blank" rel="noopener">'+s+'</a>';if(/^[\w.+-]+@[\w-]+\.[\w.]+$/.test(t))return'<a href="mailto:'+s+'">'+s+'</a>';return s}
 var PROF=[];
 function drawContact(){var f=PROF.length?PROF:[];var base=[["कंपनी","SUVARNA KALA JEWELLERS PVT. LTD."],["GSTIN","23ABUCS9668J1ZB"]];if(SITE.phone)base.push(["फोन",SITE.phone]);
-$("cont").innerHTML=base.concat(f.map(function(x){return[x.l,x.v]})).map(function(x){return'<div class="rw"><span>'+esc(x[0])+'</span><b style="text-align:right;white-space:normal">'+linkify(x[1])+'</b></div>'}).join("");
+$("cont").innerHTML=base.concat(f.map(function(x){return[x.l,x.v]})).map(function(x){return'<div class="rw"><span>'+esc(x[0])+'</span><b style="text-align:right;white-space:normal">'+linkify(x[1])+'</b></div>'}).join("");trEl("cont");
 var wa=String(SITE.wa||"").replace(/\D/g,"");if(!wa){var ph=f.find(function(x){return/whats|व्हाट्स|मोबाइल|फोन|phone|mobile/i.test(x.l)&&/\d{10}/.test(String(x.v).replace(/\D/g,""))});if(ph)wa=String(ph.v).replace(/\D/g,"")}
 if(wa){if(wa.length==10)wa="91"+wa;var h="https://wa.me/"+wa+"?text="+encodeURIComponent("नमस्ते SKJ, मुझे जानकारी चाहिए।");$("waFab").href=h;$("waFab").style.display="";$("waBig").href=h;$("waBig").style.display=""}
-if(SITE.tagline)$("tagline").textContent=SITE.tagline;if(SITE.md)$("md").textContent=SITE.md}
+if(SITE.tagline){$("tagline").removeAttribute("data-en");$("tagline").removeAttribute("data-hi");$("tagline").textContent=SITE.tagline}if(SITE.md)$("md").textContent=SITE.md}
 
 /* ---------- firebase (सिर्फ़ पढ़ना) ---------- */
 var CF=window.SKJ_FB||{},C=null;
@@ -529,7 +570,7 @@ gd("public","profile").then(function(s){if(s.exists()){PROF=(s.data().fields||[]
 gd("public","banner").then(function(s){if(s.exists()&&s.data().img)$("heroBg").style.backgroundImage="url("+s.data().img+")"}).catch(function(){});
 gd("public","logo").then(function(s){if(s.exists()&&s.data().img)$("logo").src=s.data().img}).catch(function(){});
 C.Fs.getDocs(C.Fs.collection(C.db,"pdfs")).then(function(sn){var L=sn.docs.map(function(d){return Object.assign({id:d.id},d.data())});if(!L.length)return;DOCS=L;$("docsW").style.display="";
-$("docs").innerHTML=L.map(function(p){return'<a href="#" data-doc="'+esc(p.id)+'"><span>'+(p.cat=="plan"?"📑 ":"📄 ")+esc(p.name)+'<br><span class="note">'+((p.size||0)/1048576).toFixed(1)+' MB</span></span><span class="btn sm">⬇ खोलें</span></a>'}).join("")}).catch(function(){})
+$("docs").innerHTML=L.map(function(p){return'<a href="#" data-doc="'+esc(p.id)+'"><span>'+(p.cat=="plan"?"📑 ":"📄 ")+esc(p.name)+'<br><span class="note">'+((p.size||0)/1048576).toFixed(1)+' MB</span></span><span class="btn sm">'+tr("⬇ खोलें")+'</span></a>'}).join("")}).catch(function(){})
 }).catch(function(){})}
 var DOCS=[];
 $("docs").onclick=function(e){var a=e.target.closest("[data-doc]");if(!a)return;e.preventDefault();var m=DOCS.find(function(x){return x.id==a.getAttribute("data-doc")});if(!m)return;toast("⏳ फ़ाइल खुल रही है…");
@@ -538,16 +579,31 @@ var url=URL.createObjectURL(new Blob([u8],{type:/\.pdf$/i.test(m.name)?"applicat
 gd("pdfchunks",m.id+"_"+i).then(function(sn){s+=sn.data().d;i++;nx()}).catch(function(){if(w)w.close();toast("फ़ाइल नहीं खुल पाई")})})()};
 
 /* ---------- bill verify ---------- */
-function vCard(t,b){$("vCard").innerHTML='<h2 class="gt">'+t+'</h2>'+b+'<button class="btn o sm" data-close type="button" style="margin-top:14px">बंद करें</button>';openOv("ovV")}
+function vCard(t,b){$("vCard").innerHTML=tr('<h2 class="gt">'+t+'</h2>'+b+'<button class="btn o sm" data-close type="button" style="margin-top:14px">बंद करें</button>');openOv("ovV")}
 function runVerify(code){code=String(code||"").trim();vCard("⏳ जाँच हो रही है…","");if(!/^[a-z0-9]{6,20}$/i.test(code)){vCard("❌ गलत कोड","<p class='note'>यह सत्यापन कोड सही नहीं है।</p>");return}
 fb().then(function(){return gd("verify",code)}).then(function(sn){if(!sn.exists()){vCard("❌ बिल नहीं मिला","<p class='note'>इस कोड का कोई बिल हमारे रिकॉर्ड में नहीं है। यह नकली हो सकता है।</p>");return}var d=sn.data();
 vCard("✅ असली बिल",'<p>जारी करने वाला: <b>SUVARNA KALA JEWELLERS PVT. LTD.</b></p><div class="rw"><span>बिल नं.</span><b>'+esc(d.no)+'</b></div><div class="rw"><span>तारीख</span><b>'+esc(String(d.date||"").split("-").reverse().join("-"))+'</b></div><div class="rw"><span>ग्राहक</span><b>'+esc(d.cn||"")+'</b></div><div class="rw"><span>आइटम</span><b>'+esc(d.n)+'</b></div><div class="rw t"><span>कुल रकम</span><b>'+inr(d.amt)+'</b></div><p class="note">ऊपर की रकम अपने छपे बिल से मिलाएँ।</p>')}).catch(function(){vCard("⚠️ जाँच नहीं हो पाई","<p class='note'>इंटरनेट जाँचकर दोबारा कोशिश करें।</p>")})}
 $("vGo").onclick=function(){runVerify($("vIn").value)};
 var qv=new URLSearchParams(location.search).get("v");if(qv){runVerify(qv);history.replaceState(null,"",location.pathname)}
 
+/* ---------- language + theme ---------- */
+var _dp=drawPlan;drawPlan=function(){_dp();trEl("pkgs","incomes")};
+function applyLang(){document.documentElement.lang=LANG;$("tw").textContent="";$("langBtn").textContent=LANG=="en"?"हिं":"EN";
+$$("[data-en]").forEach(function(el){if(!el.hasAttribute("data-hi"))el.setAttribute("data-hi",el.innerHTML);el.innerHTML=LANG=="en"?el.getAttribute("data-en"):el.getAttribute("data-hi")});
+$("vIn").placeholder=LANG=="en"?"e.g. ktoefwariq":"जैसे ktoefwariq";
+gChips();gDraw();drawAll();drawLegs();$$("[data-cnt]").forEach(countUp);drawTh();
+var dc=$("docs");if(dc)dc.innerHTML=LANG=="en"?tr(dc.innerHTML):dc.innerHTML.split("⬇ Open").join("⬇ खोलें")}
+$("langBtn").onclick=function(){LANG=LANG=="en"?"hi":"en";try{localStorage.setItem("skj_lang",LANG)}catch(e){}applyLang()};
+var TH=[["gold","सुनहरा","Gold","linear-gradient(135deg,#f3cf6a,#b8862b)","#0b0907"],["maroon","मरून","Maroon","linear-gradient(135deg,#f0c46a,#7a1f2b)","#140608"],["blue","नीला","Blue","linear-gradient(135deg,#8dbbff,#1d3f7a)","#070b14"],["green","हरा","Green","linear-gradient(135deg,#7be6ab,#14583a)","#07110c"],["light","हल्का (सफ़ेद)","Light","linear-gradient(135deg,#fffdf6,#e8bd52)","#faf6ec"]];
+function curTh(){return document.documentElement.getAttribute("data-theme")||"gold"}
+function drawTh(){$("thl").innerHTML=TH.map(function(t){return'<button type="button" data-th="'+t[0]+'" class="'+(curTh()==t[0]?"on":"")+'"><i style="background:'+t[3]+'"></i>'+(LANG=="en"?t[2]:t[1])+'</button>'}).join("")}
+$("thBtn").onclick=function(e){e.stopPropagation();drawTh();$("thp").classList.toggle("on")};
+$("thl").onclick=function(e){var b=e.target.closest("[data-th]");if(!b)return;var t=b.getAttribute("data-th"),m=TH.find(function(x){return x[0]==t});document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("skj_theme",t)}catch(x){}
+var mt=document.querySelector('meta[name=theme-color]');if(mt&&m)mt.content=m[4];drawTh()};
+document.addEventListener("click",function(e){if($("thp").classList.contains("on")&&!e.target.closest("#thp")&&e.target.id!="thBtn")$("thp").classList.remove("on")});
 /* ---------- start ---------- */
 function drawAll(){drawPlan();solve();if(!drawAll.d){drawAll.d=1;$("tgt").value=P().target||100000;solve();applySol()}else calc();gKts();gCalc();drawRates();drawContact();drawVideo()}
-tgtChips();drawAll();reveal(document);gFill();
+tgtChips();drawAll();reveal(document);gFill();if(LANG=="en")applyLang();else drawTh();
 liveRefresh();setInterval(function(){if(!document.hidden)liveRefresh()},600000);
 loadCloud();
 if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
