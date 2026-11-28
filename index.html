@@ -183,6 +183,12 @@ html[data-theme="light"] .feat .ic{background:radial-gradient(circle at 30% 30%,
 html[data-theme="light"] .pk .gm,html[data-theme="light"] .tot,html[data-theme="light"] .sol .bigbv{text-shadow:none}
 html[data-theme="light"] .tk span,html[data-theme="light"] .hb nav a{color:var(--tx)}
 html[data-theme="blue"] .gt,html[data-theme="green"] .gt{background-image:linear-gradient(100deg,var(--gold2),var(--gold3) 40%,var(--gold) 60%,var(--gold2))}
+
+#inst{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);z-index:96;width:min(440px,calc(100vw - 24px));background:linear-gradient(160deg,var(--c1),var(--c2));border:1px solid var(--gold);border-radius:20px;padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.6);display:flex;gap:12px;align-items:center;transition:transform .45s cubic-bezier(.2,.9,.3,1.2)}
+#inst.on{transform:translate(-50%,0)}#inst img{width:56px;height:56px;border-radius:14px;flex:none;background:#000;object-fit:contain}
+#inst .t{flex:1;min-width:0}#inst b{color:var(--gold);display:block;font-size:15px}#inst .note{display:block}
+#inst .a{display:flex;flex-direction:column;gap:6px}#inst .x{position:absolute;top:6px;right:10px;background:none;border:0;color:var(--mut);font-size:18px;cursor:pointer}
+#ios{display:none;margin-top:6px;font-size:12.5px;color:var(--tx)}
 </style></head><body>
 
 <header id="hdr"><div class="wrap hb">
@@ -356,8 +362,9 @@ html[data-theme="blue"] .gt,html[data-theme="green"] .gt{background-image:linear
 </div>
 </div></section>
 
-<footer><div class="wrap"><img src="logo.png" alt="" style="height:54px;margin:0 auto 10px;width:auto"><div>© <span id="yr"></span> Suvarna Kala Jewellers Pvt. Ltd. · Trust | Quality | Prosperity</div><div style="margin-top:6px"><a href="#" id="footLogin" data-en="Staff / Franchise login">स्टाफ / फ्रेंचाइज़ी लॉगिन</a></div></div></footer>
+<footer><div class="wrap"><img src="logo.png" alt="" style="height:54px;margin:0 auto 10px;width:auto"><div>© <span id="yr"></span> Suvarna Kala Jewellers Pvt. Ltd. · Trust | Quality | Prosperity</div><div style="margin-top:6px"><a href="#" id="footApp" style="display:none" data-en="📲 Install app">📲 ऐप इंस्टॉल करें</a> · <a href="#" id="footLogin" data-en="Staff / Franchise login">स्टाफ / फ्रेंचाइज़ी लॉगिन</a></div></div></footer>
 
+<div id="inst" role="dialog"><button class="x" type="button" id="instX" aria-label="बंद">✕</button><img src="icon-192.png" alt="SKJ"><div class="t"><b data-en="📲 Add SKJ to your Home Screen">📲 SKJ को होम स्क्रीन पर जोड़ें</b><span class="note" data-en="Open in one tap — live rate, calculator & plan. No need to open the link again.">एक टैप में खुलेगा — लाइव रेट, कैलकुलेटर और प्लान। बार-बार लिंक खोलने की ज़रूरत नहीं।</span><div id="ios" data-en="iPhone: tap the Share button ⬆ below, then &lt;b&gt;Add to Home Screen&lt;/b&gt;.">iPhone: नीचे Share बटन ⬆ दबाएँ, फिर <b>Add to Home Screen</b> चुनें।</div></div><div class="a"><button class="btn sm" id="instGo" type="button" data-en="Install">इंस्टॉल करें</button><button class="btn o sm" id="instL" type="button" data-en="Later">बाद में</button></div></div>
 <div class="fab"><a class="wa" id="waFab" href="#" target="_blank" rel="noopener" style="display:none" aria-label="WhatsApp">💬</a><button class="up" id="upFab" type="button" aria-label="ऊपर">↑</button></div>
 <div class="ov" id="ovLogin"><div class="card lgo"><div style="display:flex;justify-content:space-between;align-items:center"><h3 class="gt" style="font-size:22px;margin:0" data-en="🔐 Login">🔐 लॉगिन</h3><button class="btn o sm" data-close type="button">✕</button></div>
 <a href="erp.html"><span class="i">🏭</span><span><b data-en="ERP — Stock · GST Bills · Franchise">ERP — स्टॉक · GST बिल · फ्रेंचाइज़ी</b><span class="note" data-en="For Admin, staff and franchise">Admin, स्टाफ और फ्रेंचाइज़ी के लिए</span></span></a>
@@ -384,7 +391,7 @@ var D={"सोना 24K":"Gold 24K","⚪ चाँदी":"⚪ Silver","/कि
 "कंपनी":"Company","फोन":"Phone","वेबसाइट":"Website","बंद करें":"Close","⏳ जाँच हो रही है…":"⏳ Checking…","❌ गलत कोड":"❌ Wrong code","यह सत्यापन कोड सही नहीं है।":"This verification code is not valid.",
 "❌ बिल नहीं मिला":"❌ Bill not found","इस कोड का कोई बिल हमारे रिकॉर्ड में नहीं है। यह नकली हो सकता है।":"No bill with this code in our records. It may be fake.","✅ असली बिल":"✅ Genuine bill","जारी करने वाला: ":"Issued by: ",
 "बिल नं.":"Bill no.","तारीख":"Date","ग्राहक":"Customer","आइटम":"Items","कुल रकम":"Total amount","ऊपर की रकम अपने छपे बिल से मिलाएँ।":"Match this amount with your printed bill.","⚠️ जाँच नहीं हो पाई":"⚠️ Could not check","इंटरनेट जाँचकर दोबारा कोशिश करें।":"Check internet and try again.",
-"⏳ फ़ाइल खुल रही है…":"⏳ Opening file…","फ़ाइल नहीं खुल पाई":"Could not open file","⬇ खोलें":"⬇ Open","टीम बोनस":"Team bonus","कूपन":"Coupon","लेवल":"Level","मैचिंग":"Matching"," लाख":" lakh"," करोड़":" crore"};
+"⏳ फ़ाइल खुल रही है…":"⏳ Opening file…","फ़ाइल नहीं खुल पाई":"Could not open file","⬇ खोलें":"⬇ Open","✅ SKJ होम स्क्रीन पर जुड़ गया":"✅ SKJ added to Home Screen","टीम बोनस":"Team bonus","कूपन":"Coupon","लेवल":"Level","मैचिंग":"Matching"," लाख":" lakh"," करोड़":" crore"};
 var DK=Object.keys(D).sort(function(a,b){return b.length-a.length});
 function tr(h){if(LANG!="en")return h;h=String(h);DK.forEach(function(k){if(h.indexOf(k)>=0)h=h.split(k).join(D[k])});return h}
 function trEl(){if(LANG!="en")return;for(var i=0;i<arguments.length;i++){var e=document.getElementById(arguments[i]);if(e)e.innerHTML=tr(e.innerHTML)}}
@@ -601,6 +608,16 @@ $("thBtn").onclick=function(e){e.stopPropagation();drawTh();$("thp").classList.t
 $("thl").onclick=function(e){var b=e.target.closest("[data-th]");if(!b)return;var t=b.getAttribute("data-th"),m=TH.find(function(x){return x[0]==t});document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("skj_theme",t)}catch(x){}
 var mt=document.querySelector('meta[name=theme-color]');if(mt&&m)mt.content=m[4];drawTh()};
 document.addEventListener("click",function(e){if($("thp").classList.contains("on")&&!e.target.closest("#thp")&&e.target.id!="thBtn")$("thp").classList.remove("on")});
+/* ---------- home screen install popup ---------- */
+var DP=null,isStand=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true,isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.MSStream;
+function instShow(force){if(isStand)return;var t=0;try{t=+localStorage.getItem("skj_inst_no")||0}catch(e){}if(!force&&Date.now()-t<2*864e5)return;$("ios").style.display=(isIOS&&!DP)?"block":"none";$("instGo").style.display=DP?"":"none";$("inst").classList.add("on")}
+function instHide(later){$("inst").classList.remove("on");if(later)try{localStorage.setItem("skj_inst_no",Date.now())}catch(e){}}
+addEventListener("beforeinstallprompt",function(e){e.preventDefault();DP=e;$("footApp").style.display="";setTimeout(function(){instShow(false)},4000)});
+addEventListener("appinstalled",function(){DP=null;instHide(false);$("footApp").style.display="none";toast("✅ SKJ होम स्क्रीन पर जुड़ गया")});
+$("instGo").onclick=function(){if(!DP)return;DP.prompt();DP.userChoice.then(function(c){if(c.outcome!="accepted")instHide(true);else instHide(false);DP=null})};
+$("instL").onclick=function(){instHide(true)};$("instX").onclick=function(){instHide(true)};
+$("footApp").onclick=function(e){e.preventDefault();instShow(true)};
+if(isIOS&&!isStand){$("footApp").style.display="";setTimeout(function(){instShow(false)},5000)}
 /* ---------- start ---------- */
 function drawAll(){drawPlan();solve();if(!drawAll.d){drawAll.d=1;$("tgt").value=P().target||100000;solve();applySol()}else calc();gKts();gCalc();drawRates();drawContact();drawVideo()}
 tgtChips();drawAll();reveal(document);gFill();if(LANG=="en")applyLang();else drawTh();
